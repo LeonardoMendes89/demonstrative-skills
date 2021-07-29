@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Unna:wght@700&display=swap');
+ $s-color:#011126;
+ $ms-color:#061F40;
+ $l-color:#fff;
+ $smoke:whitesmoke;
+ $grey:#9CA1A6;
+ $val:0.5em;
+ $empty-val:none;
+ @mixin display($scr){
+    display:$scr;
+ }
+ @mixin area($areas){
+     grid-area:$areas;
+ }
+ @mixin d_grid($g_display,$columns,$rows,$g_areas){
+    display: $g_display;
+    grid-template-columns:$columns;
+    grid-template-rows:$rows;
+    grid-template-areas:$g_areas;
+ }
+ @mixin d_flex($f_display,$direction,$justify,$align){
+    display:$f_display;
+    flex-direction:$direction;
+    justify-content:$justify;
+    align-items:$align;
+ }
+ @mixin size($font){
+     font-size:$font;
+ }
+ @function calculation($value, $factor){
+     @return ($value * $factor);
+ }
+ %test{
+    border:solid 1pc red;    
+ }
+ body{
+    margin:0;
+    background-color:$s-color;
+    color:$l-color;
+
+    font-family: 'Unna', serif;
+ }
+header{
+    @include area(header);
+    @include d_flex(flex,row,space-between,center);
+    background: linear-gradient(63deg, $s-color 45%, $ms-color 55%);
+    text-decoration: double;
+    padding: 1em;
+    color:$grey;
+        strong{
+            @include size(3.4em);
+        }
+        h1{
+            border-radius:50%;
+            padding:$val;
+            background-color:$s-color;
+
+            &:hover{
+                background-color:$grey;
+                cursor:pointer;
+                color:$smoke;
+            }
+        }
+       
+}
+aside{
+    @include area(aside);
+    @include d_flex(flex,column,space-around,start);
+    padding:$val;
+    #icon{
+        margin:$val $val;
+    }
+    #search{
+        background-color:$s-color;
+        border:$empty-val;
+        outline:$empty-val;
+        color:$l-color;
+        box-shadow: 1px 3px 3px $smoke;
+        padding: 0.2em;
+        width: 100%;
+    }
+}
+main{
+    @include area(main);
+    padding:calculation($val,3);
+    background-color:$grey;
+}
+footer{
+    @include area(footer);
+    background-color:#F2F2F2;
+    color:#011126;
+    padding:0.2em;
+    @include d_flex(flex,row,flex-start,center);
+        i{
+            margin-right:5px; 
+        }
+}
+.d-dev{
+    @include d_grid( grid,
+                     220px 1fr,
+                     30vh 65vh 5vh,
+                     'aside  header'
+                     'aside    main'
+                     'aside  footer');
+        @media screen and (max-device-width:768px){
+            display: none;
+        }
+ }
+.m-device{
+    @include display(none);
+    @media screen and (max-device-width:768px){
+        display: flex;
+    }
+}
+
+
+
+
+
+
+
+
