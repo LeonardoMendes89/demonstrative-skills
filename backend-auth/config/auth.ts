@@ -10,7 +10,7 @@ export default function authenticate() {
 
     let authUser = knex<User>('auth')
                        .select('*')
-                       .then(data => console.log(data))
+                       .then(resp => console.log(resp))
                        .catch(err => console.log(err))
 }
 
