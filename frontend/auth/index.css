@@ -44,7 +44,7 @@ body {
         margin: 0.1em 0; }
         body .dock .form_camp #admin:hover {
           border: solid 1px #141F3C;
-          box-shadow: 0px 0px 2px; }
+          box-shadow: 0px 0px 3px; }
       body .dock .form_camp #pass {
         padding: 0.3em;
         width: 90%;
@@ -53,4 +53,15 @@ body {
         margin: 0.1em 0; }
         body .dock .form_camp #pass:hover {
           border: solid 1px #141F3C;
-          box-shadow: 0px 0px 2px; }
+          box-shadow: 0px 0px 3px; }
+      body .dock .form_camp #button {
+        font-weight: bold;
+        margin-top: 0.5em;
+        width: 90%;
+        color: #E9E9E9;
+        background-color: #141F3C;
+        border: none;
+        outline: none;
+        padding: 0.2em; }
+        body .dock .form_camp #button:hover {
+          color: #E7DAD1; }

@@ -83,12 +83,12 @@ body{
                             @include d_flex(flex,column,center,center);
                             
                             .title{
-                                color:#141F3C;
+                                color:$b-color;
                                 margin-bottom:0.5em;
                                 @include f_size(X-large);
                             }
                             .login{
-                                color:#4C5A75;
+                                color:$lb-color;
                             }
                             #admin{
                                 padding:0.3em;
@@ -98,7 +98,7 @@ body{
                                 @include percent(0.1em 0);
                                     &:hover{
                                         border:solid 1px $b-color;
-                                        box-shadow: 0px 0px 2px;
+                                        box-shadow: 0px 0px 3px;
                                     } 
                             }
                             #pass{
@@ -109,8 +109,21 @@ body{
                                 @include percent(0.1em 0);
                                     &:hover{
                                         border:solid 1px $b-color;
-                                        box-shadow: 0px 0px 2px;
+                                        box-shadow: 0px 0px 3px;
                                     } 
+                            }
+                            #button{
+                                font-weight:bold;
+                                margin-top:0.5em;
+                                width:90%;
+                                color:$l-color;
+                                background-color:$b-color;
+                                border:$empty-val;
+                                outline:$empty-val;
+                                padding:0.2em;
+                                    &:hover{
+                                        color:$c-color;
+                                    }
                             }
                         }
 
