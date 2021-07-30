@@ -6,3 +6,4 @@ https://getbootstrap.com
 https://fontawesome.com/v5.15/icons?d=gallery&p=2&c=design
 https://sass-lang.com/
 https://www.typescriptlang.org/
+https://firebase.google.com/
