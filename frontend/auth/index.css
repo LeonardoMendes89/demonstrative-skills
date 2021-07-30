@@ -1,6 +1,3 @@
-body .dock {
-  border: solid 1pc red; }
-
 body {
   position: relative;
   margin: 0;
@@ -27,5 +24,10 @@ body {
       height: 100%;
       width: 100%; }
     body .dock .form_camp {
+      color: #141F3C;
       height: 100%;
-      width: 100%; }
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
