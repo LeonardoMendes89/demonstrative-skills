@@ -1,9 +1,19 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var knexfile_js_1 = __importDefault(require("../knexfile.js"));
-var knex_1 = __importDefault(require("knex"));
-knex_1.default(knexfile_js_1.default);
-exports.default = knex_1.default;
+//import file from '../knexfile.js'
+var knex_1 = require("knex");
+exports.default = knex_1.knex({
+    client: 'postgresql',
+    connection: {
+        database: 'demo_auth',
+        user: 'postgres',
+        password: '123456'
+    },
+    pool: {
+        min: 2,
+        max: 10
+    },
+    migrations: {
+        tableName: 'knex_migrations'
+    }
+});
