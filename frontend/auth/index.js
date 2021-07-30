@@ -18,7 +18,7 @@ $('#button').click(function(){
         $('#empty').show(100)
     }else if(
             admInput.value  != adm
-        &&
+        ||
             passInput.value != pass
     ){
         $('#alerting').show(100) 
@@ -29,4 +29,12 @@ $('#button').click(function(){
     ){
         document.location.href = 'web/index.html'
     }
+})
+$('#admin').mouseenter(function(){
+    $('#alerting').hide(100)
+    $('#empty').hide(100)
+})
+$('#pass').mouseenter(function(){
+    $('#alerting').hide(100)
+    $('#empty').hide(100)
 })
