@@ -1,3 +1,6 @@
+body .dock {
+  border: solid 1pc red; }
+
 body {
   position: relative;
   margin: 0;
@@ -6,14 +9,6 @@ body {
   width: 100%;
   background-color: #192C54;
   color: #E9E9E9; }
-  body .img {
-    grid-area: img;
-    height: 100%;
-    width: 100%; }
-  body .form {
-    grid-area: form;
-    height: 100%;
-    width: 100%; }
   body .dock {
     background-color: #E9E9E9;
     margin: 25vh 25vw;
@@ -24,3 +19,13 @@ body {
     grid-template-columns: 60% 40%;
     grid-template-rows: 1fr;
     grid-template-areas: "img form" "img form"; }
+    body .dock .img {
+      grid-area: img; }
+    body .dock .form {
+      grid-area: form; }
+    body .dock #hr {
+      height: 100%;
+      width: 100%; }
+    body .dock .form_camp {
+      height: 100%;
+      width: 100%; }

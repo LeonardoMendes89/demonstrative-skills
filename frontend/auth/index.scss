@@ -57,16 +57,9 @@ body{
     background-color:$s-color;
     color:$l-color;
 
-    .img{
-        @include area(img);
-        @include size(100%,100%);
-    }
-    .form{
-        @include area(form);
-        @include size(100%,100%);
-    }
     .dock{
         background-color:$l-color;
+        @extend %test;
         @include percent(25vh,25vw);
         @include radius(6px);
         @include size(250px,700px);
@@ -75,6 +68,23 @@ body{
                         1fr,
                         'img form'
                         'img form')
+
+
+                        .img{
+                            @include area(img);
+                          
+                        }
+                        .form{
+                            @include area(form);
+                            
+                        }
+                        #hr{
+                            @include size(100%,100%);
+                        }
+                        .form_camp{
+                            @include size(100%,100%);
+                        }
+
     }
 }
 
