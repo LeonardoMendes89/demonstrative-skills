@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//import file from '../knexfile.js'
 var knex_1 = require("knex");
 exports.default = knex_1.knex({
     client: 'postgresql',

@@ -7,7 +7,7 @@ var knex_js_1 = __importDefault(require("./knex.js"));
 function authenticate() {
     var authUser = knex_js_1.default('auth')
         .select('*')
-        .then(function (resp) { return console.log(resp); })
-        .catch(function (err) { return console.log(err); });
+        .then(function (resp) { return resp; })
+        .catch(function (err) { return err; });
 }
 exports.default = authenticate;
