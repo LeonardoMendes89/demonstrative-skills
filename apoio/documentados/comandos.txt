@@ -5,7 +5,7 @@ instalações:
  npm i cors
  npm i pg
  npm i consign
- npm i @types/node
+ npm i --save-dev @types/node
  npm i @types/express
  npm i @types/cors
  npm i -g node-sass
@@ -16,6 +16,7 @@ knex:
  knex migrate:rollback
 ts:
  npx tsc
+ npx tsc --init
  npx tsc [nome-do-arquivo]
  npx tsc [nome-do-arquivo] --watch
 sass:
@@ -24,3 +25,10 @@ sass:
 node:
  node [nome-do-arquivo]
  npm start nodemon [nome-do-arquivo]
+postgres:
+ psql -U postgres
+ \c
+ \l
+ \c [nome-do-banco]
+ \dt
+ \q
