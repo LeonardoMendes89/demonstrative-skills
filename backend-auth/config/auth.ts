@@ -7,10 +7,18 @@ export default function authenticate() {
         user     :string;
         password :string;
     }
-
+    
     let authUser = knex<User>('auth')
                        .select('*')
-                       .then(resp => resp)
-                       .catch(err => err)
+                       .then(resp =>  resp )
+                       .catch(err =>  err )
+
+    let authUserConsole = knex<User>('auth')
+                       .select('*')
+                       .then(resp =>  console.log(resp) )
+                       .catch(err =>  console.log(err) )
+
+    return {    authUser, authUserConsole   }
+                       
 }
 

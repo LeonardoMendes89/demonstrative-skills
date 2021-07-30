@@ -12,9 +12,10 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use(cors_1.default({ origin: '*' }));
 app.get('/auth', function (req, res) {
-    return res.status(200).json(auth_js_1.default());
+    return res.json(auth_js_1.default());
 });
 app.listen(port, function () {
     var msg = "online into port :" + port;
     console.log(msg);
+    console.log(auth_js_1.default());
 });

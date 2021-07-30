@@ -9,11 +9,12 @@ app.use(express.urlencoded({extended: true}))
 app.use(cors({origin:'*'}))
 
 app.get('/auth',(req,res)=>{
-    return res.status(200).json(auth())
+    return res.json(auth())
 })
 
 app.listen(port,()=>{
     let msg :string = `online into port :${port}`
     console.log(msg)
+    console.log(auth())
 })
 

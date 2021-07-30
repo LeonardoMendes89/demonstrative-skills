@@ -9,5 +9,10 @@ function authenticate() {
         .select('*')
         .then(function (resp) { return resp; })
         .catch(function (err) { return err; });
+    var authUserConsole = knex_js_1.default('auth')
+        .select('*')
+        .then(function (resp) { return console.log(resp); })
+        .catch(function (err) { return console.log(err); });
+    return { authUser: authUser, authUserConsole: authUserConsole };
 }
 exports.default = authenticate;
