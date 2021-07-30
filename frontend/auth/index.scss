@@ -58,6 +58,9 @@ body{
     color:$l-color;
 
     .dock{
+        @media(max-device-width:1023px){
+            display:none;
+        }
         background-color:$l-color;
         /* em responsividade este valor não se adapta bem */
         @include percent(25vh);
