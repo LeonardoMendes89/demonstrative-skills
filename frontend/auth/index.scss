@@ -1,9 +1,13 @@
+$b-color:#141F3C;
 $s-color:#192C54;
+$lb-color:#4C5A75;
 $l-color:#E9E9E9;
+$c-color:#E7DAD1;
 $smoke:whitesmoke;
 $grey:#9CA1A6;
 $val:0.5em;
 $empty-val:none;
+$hidden:hidden;
  @mixin display($scr){
     display:$scr;
  }
@@ -29,32 +33,47 @@ $empty-val:none;
  @mixin f_size($font){
      font-size:$font;
  }
+ @mixin radius($bdr){
+     border-radius:$bdr; 
+ }
+ @mixin size($hgt,$wdt){
+    height:$hgt;
+    width:$wdt;
+}
+@mixin percent($p_vh,$p_vw){
+    margin:$p_vh $p_vw;
+}
  @function calculation($value, $factor){
      @return ($value * $factor);
  }
  %test{
     border:solid 1pc red;    
  }
-@mixin size($hgt,$wdt){
-    height:$hgt;
-    width:$wdt;
-}
 body{
+    position: relative;
+    margin:0;
+    overflow:$hidden;
+    @include size(100%,100%);
     background-color:$s-color;
     color:$l-color;
 
     .img{
         @include area(img);
+        @include size(100%,100%);
     }
     .form{
         @include area(form);
+        @include size(100%,100%);
     }
     .dock{
         background-color:$l-color;
+        @include percent(25vh,25vw);
+        @include radius(6px);
         @include size(250px,700px);
         @include d_grid(grid,
                         60% 40%,
                         1fr,
+                        'img form'
                         'img form')
     }
 }

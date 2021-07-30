@@ -1,12 +1,26 @@
 body {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
   background-color: #192C54;
   color: #E9E9E9; }
   body .img {
-    grid-area: img; }
+    grid-area: img;
+    height: 100%;
+    width: 100%; }
   body .form {
-    grid-area: form; }
+    grid-area: form;
+    height: 100%;
+    width: 100%; }
   body .dock {
+    background-color: #E9E9E9;
+    margin: 25vh 25vw;
+    border-radius: 6px;
+    height: 250px;
+    width: 700px;
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 1fr;
-    grid-template-areas: "img form"; }
+    grid-template-areas: "img form" "img form"; }
