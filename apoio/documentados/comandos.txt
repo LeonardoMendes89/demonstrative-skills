@@ -1,17 +1,26 @@
+instalações:
+ npm i typescript --save-dev
+ npm i nodemon
+ npm i knex
+ npm i cors
+ npm i pg
+ npm i consign
+ npm i @types/node
+ npm i @types/express
+ npm i @types/cors
+ npm i -g node-sass
 knex:
-  npm i knex
-  knex init
-  knex migrate:make create_table_[nome-da-tabela]
-  knex migrate:latest
-  knex migrate:rollback
+ knex init
+ knex migrate:make create_table_[nome-da-tabela]
+ knex migrate:latest
+ knex migrate:rollback
 ts:
-  npm i typescript --save-dev
-  npx tsc
-  npx tsc [nome-do-arquivo]
-  npx tsc [nome-do-arquivo] --watch
+ npx tsc
+ npx tsc [nome-do-arquivo]
+ npx tsc [nome-do-arquivo] --watch
 sass:
-  npm i -g node-sass
-  node-sass [caminho-de-entrada] [caminho-de-saida]
+ node-sass [caminho-de-entrada] [caminho-de-saida]
+ node-sass --watch [caminho-de-entrada] [caminho-de-saida]
 node:
-  node [nome-do-arquivo]
-  npm start nodemon [nome-do-arquivo]
+ node [nome-do-arquivo]
+ npm start nodemon [nome-do-arquivo]

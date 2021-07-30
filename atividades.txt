@@ -1,2 +1,10 @@
 dia 1 - construir a api de people,
-        
+        construir a base de dados no postgres,
+        construir a page home/workers,
+        estilizar a page home/workers.
+dia 2 - construir a page auth,
+        estilizar a page auth,
+        criar as lógicas iniciais e dados mock
+        para acesso a home.
+dia 3 - criar a api de autenticação,
+        criar a base de dados de autenticação
