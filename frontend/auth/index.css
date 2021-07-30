@@ -65,3 +65,9 @@ body {
         padding: 0.2em; }
         body .dock .form_camp #button:hover {
           color: #E7DAD1; }
+  body #empty, body #alerting {
+    width: 60%;
+    font-weight: bold;
+    text-align: center;
+    font-size: large;
+    margin: 0 25vh; }

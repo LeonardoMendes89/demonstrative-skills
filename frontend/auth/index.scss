@@ -128,5 +128,13 @@ body{
                         }
 
     }
+
+                            #empty,#alerting{
+                                width:60%;
+                                font-weight:bold;
+                                text-align:center;
+                                @include f_size(large);
+                                @include percent(0 25vh);
+                            }
 }
 
