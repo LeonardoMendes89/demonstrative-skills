@@ -14,4 +14,4 @@ sass:
   node-sass [caminho-de-entrada] [caminho-de-saida]
 node:
   node [nome-do-arquivo]
-  npm start nodemon ./[nome-do-arquivo]
+  npm start nodemon [nome-do-arquivo]
