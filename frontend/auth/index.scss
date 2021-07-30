@@ -42,7 +42,20 @@ $empty-val:none;
 body{
     background-color:$s-color;
     color:$l-color;
-}
-.dock{
 
+    .img{
+        @include area(img);
+    }
+    .form{
+        @include area(form);
+    }
+    .dock{
+        background-color:$l-color;
+        @include size(250px,700px);
+        @include d_grid(grid,
+                        60% 40%,
+                        1fr,
+                        'img form')
+    }
 }
+

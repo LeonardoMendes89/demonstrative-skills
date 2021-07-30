@@ -1,1 +1,5 @@
-alert('criar a lógica neste arquivo em modo  --watch');
+document.onclick = addEventListener('click',(e) => e.preventDefault())
+document.onload = addEventListener('load',()=>{
+    $('#alerting').hide(1)
+    $('#empty').hide(1)
+})  

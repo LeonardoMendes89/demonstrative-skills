@@ -1,3 +1,12 @@
 body {
   background-color: #192C54;
   color: #E9E9E9; }
+  body .img {
+    grid-area: img; }
+  body .form {
+    grid-area: form; }
+  body .dock {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "img form"; }
