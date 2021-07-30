@@ -16,18 +16,21 @@ $('#button').click(function(){
             passInput.value === ''
     ){
         $('#empty').show(100)
+        clear()
     }else if(
             admInput.value  != adm
         ||
             passInput.value != pass
     ){
         $('#alerting').show(100) 
+        clear()
     }else if(
              admInput.value  === adm
         &&
             passInput.value  === pass
     ){
         document.location.href = 'web/index.html'
+        clear()
     }
 })
 $('#admin').mouseenter(function(){
@@ -38,3 +41,10 @@ $('#pass').mouseenter(function(){
     $('#alerting').hide(100)
     $('#empty').hide(100)
 })
+function clear(){
+    let admInput  = document.querySelector('#admin')
+    let passInput = document.querySelector('#pass')
+
+    admInput.value  = ''
+    passInput.value = ''
+}
