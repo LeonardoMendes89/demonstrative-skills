@@ -1,6 +1,5 @@
 
-module.exports = {
-
+export = {
 
     client: 'postgresql',
     connection: {

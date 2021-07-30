@@ -8,6 +8,7 @@ instalações:
  npm i --save-dev @types/node
  npm i @types/express
  npm i @types/cors
+ npm i @types/knex
  npm i -g node-sass
 knex:
  knex init
