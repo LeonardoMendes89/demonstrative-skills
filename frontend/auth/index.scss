@@ -59,6 +59,7 @@ body{
 
     .dock{
         background-color:$l-color;
+        /* em responsividade este valor não se adapta bem */
         @include percent(25vh);
         @include radius(6px);
         @include size(250px,700px);
