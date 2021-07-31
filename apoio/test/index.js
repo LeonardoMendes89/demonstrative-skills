@@ -27,9 +27,9 @@ app.delete('/delete/:id', async(req, res)=>{
                 res.status(400).json(err)
             })
 })
-app.put('/update/:id', (req,res)=>{
-        db.where({id :req.params.id}).update()
-            .table('test').then(_ => {
+app.put('/update/:id', async(req,res)=>{
+     await db.where({id :req.params.id})
+            .update().table('test').then(_ => {
                 res.status(201).json(_)
             }).catch(err => {
                 res.status(400).json(err)
