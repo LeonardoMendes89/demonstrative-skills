@@ -133,12 +133,15 @@ body{
 
     }
 
-                            #empty,#alerting{
+                            #empty,#alerting,#nofetch{
                                 width:60%;
                                 font-weight:bold;
                                 text-align:center;
                                 @include f_size(large);
                                 @include percent(0 25vh);
+                            }
+                            #nofetch{
+                                cursor:pointer;
                             }
 }
 

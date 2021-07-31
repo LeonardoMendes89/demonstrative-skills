@@ -2,6 +2,7 @@ document.onclick = addEventListener('click',(e)=> e.preventDefault())
 document.onload  = addEventListener('load', ( )=>{
     $('#alerting').hide(1)
     $('#empty').hide(1)
+    $('#nofetch').hide(1)
 })  
 $('#button').click(function(){
     let admInput  = document.querySelector('#admin').value
@@ -17,7 +18,7 @@ $('#button').click(function(){
             cache  :'default',
             status :200
         }
-        
+
         fetch(url,con)
                 .then(data => data.json())
                 .then(data => {
@@ -30,7 +31,9 @@ $('#button').click(function(){
                         }
                     })
                 })
-                .catch(err => console.log(err))
+                .catch(_ => {
+                    $('#nofetch').show(100)
+                })
     }
 })
 $('#admin').mouseenter(function(){
@@ -40,6 +43,9 @@ $('#admin').mouseenter(function(){
 $('#pass').mouseenter(function(){
     $('#alerting').hide(100)
     $('#empty').hide(100)
+})
+$('#nofetch').click(function(){
+    $(this).hide(100)
 })
 function clear(){
     let admInput  = document.querySelector('#admin')
