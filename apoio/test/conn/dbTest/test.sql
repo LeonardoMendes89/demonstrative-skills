@@ -5,7 +5,7 @@
 
     CREATE TABLE IF NOT EXISTS test(
         id SERIAL,
-        testMsg VARCHAR(50) NOT NULL
+        testmsg VARCHAR(50) NOT NULL
     );
     DROP TABLE test;
 
