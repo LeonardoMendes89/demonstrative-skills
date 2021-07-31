@@ -8,10 +8,6 @@ $('#button').click(function(){
     let passInput = document.querySelector('#pass').value 
     let url = 'http://localhost:3004/auth'
 
-    //   $('#empty').show(100)
-    //   $('#alerting').show(100) 
-    //   document.location.href = 'web/index.html'
-
     if(admInput == '' || passInput == ''){
         $('#empty').show(100)
         clear()
@@ -21,7 +17,7 @@ $('#button').click(function(){
             cache  :'default',
             status :200
         }
-    
+        
         fetch(url,con)
                 .then(data => data.json())
                 .then(data => {
