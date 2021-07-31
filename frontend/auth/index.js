@@ -4,33 +4,37 @@ document.onload  = addEventListener('load', ( )=>{
     $('#empty').hide(1)
 })  
 $('#button').click(function(){
-    let admInput  = document.querySelector('#admin')
-    let passInput = document.querySelector('#pass')
+    let admInput  = document.querySelector('#admin').value
+    let passInput = document.querySelector('#pass').value 
+    let url = 'http://localhost:3004/auth'
 
-    let adm  = 'mendes'
-    let pass = '1234'
+    //   $('#empty').show(100)
+    //   $('#alerting').show(100) 
+    //   document.location.href = 'web/index.html'
 
-    if(
-            admInput.value  === ''
-        ||
-            passInput.value === ''
-    ){
+    if(admInput == '' || passInput == ''){
         $('#empty').show(100)
         clear()
-    }else if(
-            admInput.value  != adm
-        ||
-            passInput.value != pass
-    ){
-        $('#alerting').show(100) 
-        clear()
-    }else if(
-             admInput.value  === adm
-        &&
-            passInput.value  === pass
-    ){
-        document.location.href = 'web/index.html'
-        clear()
+    }else{
+        const con = {
+            method :'GET',
+            cache  :'default',
+            status :200
+        }
+    
+        fetch(url,con)
+                .then(data => data.json())
+                .then(data => {
+                    data.map(e => {
+                        if(admInput == e.user && passInput == e.password){
+                            document.location.href = 'web/index.html'
+                        }else{
+                            $('#alerting').show(100) 
+                            clear()
+                        }
+                    })
+                })
+                .catch(err => console.log(err))
     }
 })
 $('#admin').mouseenter(function(){
