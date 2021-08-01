@@ -11,3 +11,6 @@ $('.sair').mousemove(function(){
 $('.sair').mouseleave(function(){
     $('#alert').hide()
 })
+$('#admArea').click(function(){
+    doc.location.href = '../admin/index.html'
+})

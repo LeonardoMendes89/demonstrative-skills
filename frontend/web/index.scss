@@ -94,6 +94,16 @@ footer{
         i{
             margin-right:5px; 
         }
+        strong{
+            margin-left:18em; 
+            background-color: $s-color;
+            color:$smoke;
+            padding:0.2em;
+                &:hover{
+                    color:$grey;
+                    cursor:pointer;
+                }
+        }
 }
 .d-dev{
     @include d_grid( grid,

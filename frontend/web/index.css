@@ -60,6 +60,14 @@ footer {
   align-items: center; }
   footer i {
     margin-right: 5px; }
+  footer strong {
+    margin-left: 18em;
+    background-color: #011126;
+    color: whitesmoke;
+    padding: 0.2em; }
+    footer strong:hover {
+      color: #9CA1A6;
+      cursor: pointer; }
 
 .d-dev {
   display: grid;
