@@ -1,1 +1,1 @@
-alert(`file js`)
+

@@ -1,1 +1,27 @@
 /*scss file*/
+@import url("https://fonts.googleapis.com/css2?family=Unna:wght@700&display=swap");
+body {
+  margin: 0;
+  background-color: #192C54;
+  color: whitesmoke;
+  font-family: 'Unna', serif; }
+
+.dock {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30vh 65vh 5vh;
+  grid-template-areas: "header  header" "main     main" "footer footer"; }
+  .dock header {
+    grid-area: header; }
+  .dock main {
+    grid-area: main;
+    background: #E9E9E9; }
+  .dock footer {
+    grid-area: footer;
+    background: #F2F2F2; }
+  .dock header, .dock main, .dock footer {
+    padding: 0.5em; }
+  .dock main, .dock footer {
+    color: #011126; }
