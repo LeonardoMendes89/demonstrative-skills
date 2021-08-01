@@ -76,6 +76,20 @@ $hidden:hidden;
                      footer{
                         @include area(footer);
                         background:#F2F2F2;
+                        @include d_flex(flex,row,flex-start,center);
+                        i{
+                            margin-right:5px; 
+                        }
+                        strong{
+                            margin-left:32em; 
+                            background-color: $s-color;
+                            color:$smoke;
+                            padding:0.2em;
+                                &:hover{
+                                    color:$grey;
+                                    cursor:pointer;
+                                }
+                        }
                      }
                      header,main,footer{
                          padding:0.5em;

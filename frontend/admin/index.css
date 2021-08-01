@@ -20,7 +20,21 @@ body {
     background: #E9E9E9; }
   .dock footer {
     grid-area: footer;
-    background: #F2F2F2; }
+    background: #F2F2F2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; }
+    .dock footer i {
+      margin-right: 5px; }
+    .dock footer strong {
+      margin-left: 32em;
+      background-color: #192C54;
+      color: whitesmoke;
+      padding: 0.2em; }
+      .dock footer strong:hover {
+        color: #9CA1A6;
+        cursor: pointer; }
   .dock header, .dock main, .dock footer {
     padding: 0.5em; }
   .dock main, .dock footer {
