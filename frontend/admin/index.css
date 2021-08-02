@@ -4,7 +4,8 @@ body {
   margin: 0;
   background-color: #192C54;
   color: whitesmoke;
-  font-family: 'Unna', serif; }
+  font-family: 'Unna', serif;
+  overflow: hidden; }
 
 .dock {
   height: 100vh;
@@ -61,3 +62,9 @@ body {
     margin-bottom: 0.8em; }
   .dock main #send {
     cursor: pointer; }
+  .dock main #send-mesg {
+    font-weight: bold;
+    width: 20vw; }
+  .dock main #wrongsend-mesg {
+    font-weight: bold;
+    width: 25vw; }

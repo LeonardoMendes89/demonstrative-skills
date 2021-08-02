@@ -2,6 +2,8 @@ let doc = document
 doc.onload = addEventListener('load',()=>{
     sector()
     normalMode()
+    $('#send-mesg').hide(1)
+    $('#wrongsend-mesg').hide(1)
 })
 doc.onclick = addEventListener('click',e => e.preventDefault())
 $('#homeArea').click(function(){
@@ -32,16 +34,68 @@ function normalMode(){
     $('#edit').hide(1)
     $('#normal').show(1)
 } 
+function sendMesg(){
+    $('#send-mesg').show(100)
+}
+$('input').mouseenter(function(){
+    $('#wrongsend-mesg').hide(100)
+    $('#send-mesg').hide(100)
+})
 $('#send').click(function(){
-   const id       = document.querySelector('#id').value
+
    const name     = document.querySelector('#name').value
    const job      = document.querySelector('#job').value
    const salary   = document.querySelector('#salary').value
    const sector   = document.querySelector('#inputGroupSelect01').value
    
+    if( name    == '' ||
+        job     == '' ||
+        salary  == '' ||
+        sector  == ''){
+           
+            $('#wrongsend-mesg').show(100)
 
-   alert(id + ',' + name + ',' + job + ',' + salary + ',' + sector)
+    }else{
+        const url = 'http://localhost:3003/insert' 
+
+   const data = {
+        name,
+        job,
+        salary,
+        sector
+   }
+
+   const config = {
+        method: 'POST',
+        body:JSON.stringify(data),
+        headers :{
+            'Content-Type': 'application/json'
+        },
+        mode: 'cors',
+        cache :'default',
+        status :201,
+   }
+
+   fetch(url,config).then(data => data.json())
+                    .catch(err => console.log(err))
+
+                    clearFields()
+                    sendMesg()
+    } 
 })
+function clearFields(){
+    const id       = document.querySelector('#id')
+    const name     = document.querySelector('#name')
+    const job      = document.querySelector('#job')
+    const salary   = document.querySelector('#salary')
+    const sector   = document.querySelector('#inputGroupSelect01')
+
+    id.value        = ''
+    name.value      = ''
+    job.value       = ''
+    salary.value    = ''
+    sector.value    = ''
+}
 $('#clear').click(function(){
     const id       = document.querySelector('#id')
     const name     = document.querySelector('#name')

@@ -60,6 +60,7 @@ $hidden:hidden;
      background-color:$s-color;
      color:$smoke; 
      font-family: 'Unna', serif;
+     overflow:hidden;
  }
  .dock{
      @include size(100vh,100vw);
@@ -124,6 +125,14 @@ $hidden:hidden;
                          }
                          #send{
                              cursor:pointer;
+                         }
+                         #send-mesg{
+                             font-weight: bold;
+                             width:20vw;
+                         }
+                         #wrongsend-mesg{
+                            font-weight: bold;
+                            width:25vw;
                          }
                      }
 
