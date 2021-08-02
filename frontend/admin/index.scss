@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Unna:wght@700&display=swap');
 $b-color:#141F3C;
 $s-color:#192C54;
+$ms-color:#061F40;
 $lb-color:#4C5A75;
 $l-color:#E9E9E9;
 $c-color:#E7DAD1;
@@ -42,6 +43,9 @@ $hidden:hidden;
     height:$hgt;
     width:$wdt;
 }
+@mixin f_size($font){
+    font-size:$font;
+}
 @mixin percent($p_vh){
     margin:$p_vh;
 }
@@ -61,26 +65,23 @@ $hidden:hidden;
      @include size(100vh,100vw);
      @include d_grid(grid,
                      1fr,
-                     20vh 55vh 20vh 5vh,
+                     20vh 75vh 5vh,
                      'header  header'
                      'main     main'
-                     'data     data'
                      'footer footer');
  
                      header{
                         @include area(header);
-                     }
+                        @include d_flex(flex,row,space-between,center);
+                        background: linear-gradient(63deg, $s-color 45%, $ms-color 55%);
+                        text-decoration: double;
+                        padding: 1em;
+                        color:$grey;
+                        @include f_size(3.4em);
+                    }
                      main{
                         @include area(main);
                         background:$l-color;
-                     }
-                     #workersdata{
-                        @include area(data);
-                        background-color: black;
-                        overflow:scroll;
-                            #dataCat{
-                                
-                            }
                      }
                      footer{
                         @include area(footer);
@@ -113,7 +114,7 @@ $hidden:hidden;
                         #salary,
                         #label,
                         #inputGroupSelect01{
-                            @include percent(0.5em 0)
+                            @include percent(1em 0)
                          }
                          #id{
                              width:10vw;
@@ -123,9 +124,6 @@ $hidden:hidden;
                          }
                          #send{
                              cursor:pointer;
-                         }
-                         #workersdata{
-                             @include d_flex(flex,column,center,center)
                          }
                      }
 
