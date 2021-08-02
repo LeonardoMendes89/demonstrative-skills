@@ -24,5 +24,25 @@ function sector(){
         .catch(err => console.log(err))
 }
 $('#send').click(function(){
-   alert('sending ...')
+   const id       = document.querySelector('#id').value
+   const name     = document.querySelector('#name').value
+   const job      = document.querySelector('#job').value
+   const salary   = document.querySelector('#salary').value
+   const sector   = document.querySelector('#inputGroupSelect01').value
+   
+
+   alert(id + ',' + name + ',' + job + ',' + salary + ',' + sector)
+})
+$('#clear').click(function(){
+    const id       = document.querySelector('#id')
+    const name     = document.querySelector('#name')
+    const job      = document.querySelector('#job')
+    const salary   = document.querySelector('#salary')
+    const sector   = document.querySelector('#inputGroupSelect01')
+
+    id.value        = ''
+    name.value      = ''
+    job.value       = ''
+    salary.value    = ''
+    sector.value    = ''
 })
