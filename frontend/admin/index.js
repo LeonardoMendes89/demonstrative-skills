@@ -1,13 +1,12 @@
 let doc = document
 doc.onload = addEventListener('load',()=>{
-    const url = 'category.json'
-    teste()
+    sector()
 })
 doc.onclick = addEventListener('click',e => e.preventDefault())
 $('#homeArea').click(function(){
    doc.location.href = '../web/index.html'
 })
-function teste(){
+function sector(){
     const url = 'category.json'
     const select = document.querySelector('#inputGroupSelect01')
 
@@ -22,5 +21,21 @@ function teste(){
                 select.append(option)
             })
         })
-        .catch(err => err)
+        .catch(err => console.log(err))
 }
+$('#send').click(function(){
+    const url = 'category.json'
+    const area = document.querySelector('#dataCat')
+
+    fetch(url)
+            .then(res => res.json())
+            .then(res => {
+                res.map(e => {
+                    let cat = e.category
+                    let ul  = document.createElement('ul')
+                    ul.append(cat)
+                    area.append(ul)
+                })
+            })
+            .catch(e => console.log(e))
+})

@@ -61,9 +61,10 @@ $hidden:hidden;
      @include size(100vh,100vw);
      @include d_grid(grid,
                      1fr,
-                     30vh 65vh 5vh,
+                     20vh 55vh 20vh 5vh,
                      'header  header'
                      'main     main'
+                     'data     data'
                      'footer footer');
  
                      header{
@@ -73,9 +74,17 @@ $hidden:hidden;
                         @include area(main);
                         background:$l-color;
                      }
+                     #workersdata{
+                        @include area(data);
+                        background-color: black;
+                        overflow:scroll;
+                            #dataCat{
+                                
+                            }
+                     }
                      footer{
                         @include area(footer);
-                        background:#F2F2F2;
+                        background:white;
                         @include d_flex(flex,row,flex-start,center);
                         i{
                             margin-right:5px; 
@@ -97,4 +106,27 @@ $hidden:hidden;
                      main,footer{
                         color:#011126;
                      }
+                     main{
+                        #id,
+                        #name,
+                        #job,
+                        #salary,
+                        #label,
+                        #inputGroupSelect01{
+                            @include percent(0.5em 0)
+                         }
+                         #id{
+                             width:10vw;
+                         }
+                         #normal{
+                             margin-bottom:0.8em;
+                         }
+                         #send{
+                             cursor:pointer;
+                         }
+                         #workersdata{
+                             @include d_flex(flex,column,center,center)
+                         }
+                     }
+
 }

@@ -15,15 +15,44 @@
         </header>
     
         <main>
+
+            <input class="form-control" type="number" placeholder="id" aria-label="default input example" id="id">
+
+            <input class="form-control" type="text" placeholder="name" aria-label="default input example" id="name">
+
+            <input class="form-control" type="text" placeholder="job" aria-label="default input example" id="job">
+
+            <input class="form-control" type="number" placeholder="salary" aria-label="default input example" id="salary">
+
             <div class="input-group mb-3">
-                <label class="input-group-text" for="inputGroupSelect01">Sector</label>
+                <label class="input-group-text" for="inputGroupSelect01" id="label">Sector</label>
                 <select class="form-select" id="inputGroupSelect01">
-                  <option selected>Choose...</option>
-                  <option value="">One</option>
+                  <option selected>...</option>
                 </select>
               </div>
+
+              <div id="normal">
+                  <button type="button" class="btn btn-outline-primary" id="send">send</button>
+              </div>
         </main>
-    
+        
+        <div id="workersdata">
+            <table class="table table-dark table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">category</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" id="dataId">1</th>
+                    <td id="dataCat"></td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+
         <footer>
             <i class="fas fa-copyright"></i> 
             <i>2021 worker's system have all rights reserved.</i>
