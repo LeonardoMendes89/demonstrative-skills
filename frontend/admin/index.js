@@ -1,6 +1,7 @@
 let doc = document
 doc.onload = addEventListener('load',()=>{
     sector()
+    normalMode()
 })
 doc.onclick = addEventListener('click',e => e.preventDefault())
 $('#homeArea').click(function(){
@@ -23,6 +24,14 @@ function sector(){
         })
         .catch(err => console.log(err))
 }
+function editMode(){
+    $('#edit').show(1)
+    $('#normal').hide(1)
+}
+function normalMode(){
+    $('#edit').hide(1)
+    $('#normal').show(1)
+} 
 $('#send').click(function(){
    const id       = document.querySelector('#id').value
    const name     = document.querySelector('#name').value
@@ -46,3 +55,11 @@ $('#clear').click(function(){
     salary.value    = ''
     sector.value    = ''
 })
+$('#edition').click(function(){
+    editMode()
+})
+$('#nmode').click(function(){
+    normalMode()
+})
+
+
