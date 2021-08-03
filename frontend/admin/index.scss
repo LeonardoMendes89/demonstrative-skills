@@ -120,11 +120,8 @@ $hidden:hidden;
                          #id{
                              width:10vw;
                          }
-                         #normal{
-                             margin-bottom:0.8em;
-                         }
-                         #send{
-                             cursor:pointer;
+                         #normal,#edit{
+                             margin-bottom: 0.8em;
                          }
                          #send-mesg{
                              font-weight: bold;
@@ -133,6 +130,10 @@ $hidden:hidden;
                          #wrongsend-mesg{
                             font-weight: bold;
                             width:25vw;
+                         }
+                         #update-mesg{
+                            font-weight: bold;
+                            width:25vw; 
                          }
                      }
 

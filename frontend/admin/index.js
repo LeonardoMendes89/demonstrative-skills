@@ -4,6 +4,7 @@ doc.onload = addEventListener('load',()=>{
     normalMode()
     $('#send-mesg').hide(1)
     $('#wrongsend-mesg').hide(1)
+    $('#update-mesg').hide(1)
 })
 doc.onclick = addEventListener('click',e => e.preventDefault())
 $('#homeArea').click(function(){
@@ -40,6 +41,7 @@ function sendMesg(){
 $('input').mouseenter(function(){
     $('#wrongsend-mesg').hide(100)
     $('#send-mesg').hide(100)
+    $('#update-mesg').hide(100)
 })
 $('#send').click(function(){
 
@@ -73,7 +75,7 @@ $('#send').click(function(){
         },
         mode: 'cors',
         cache :'default',
-        status :201,
+        status :201
    }
 
    fetch(url,config).then(data => data.json())
@@ -114,6 +116,73 @@ $('#edition').click(function(){
 })
 $('#nmode').click(function(){
     normalMode()
+})
+$('#getId').click(function(){
+    const id       = document.querySelector('#id').value
+    const name     = document.querySelector('#name')
+    const job      = document.querySelector('#job')
+    const salary   = document.querySelector('#salary')
+    const sector   = document.querySelector('#inputGroupSelect01')
+
+    const url = `http://localhost:3003/${id}`
+
+    const config = {
+        method: 'GET',
+        mode  : 'cors',
+        cache : 'default',
+        status: 200
+   }
+
+   fetch(url,config)
+                .then(res => res.json())
+                .then(res => {
+                    res.map(e => {
+                        let nameDb   = e.name
+                        let jobDb    = e.job
+                        let salaryDb = e.salary
+                        let sectorDb = e.sector
+
+                        name.value   = nameDb
+                        job.value    = jobDb
+                        salary.value = salaryDb
+                        sector.value = sectorDb
+                    }) 
+                })
+                .catch(err => console.log(err))
+})
+$('#update').click(function(){
+    const id       = document.querySelector('#id').value
+    const name     = document.querySelector('#name').value
+    const job      = document.querySelector('#job').value
+    const salary   = document.querySelector('#salary').value
+    const sector   = document.querySelector('#inputGroupSelect01').value
+
+    const url = `http://localhost:3003/update/${id}`
+
+     const data = {
+        name,
+        job,
+        salary,
+        sector
+   }
+
+    const config = {
+        method: 'UPDATE',
+        body:JSON.stringify(data),
+        headers :{
+            'Content-Type': 'application/json'
+        },
+        mode  : 'cors',
+        cache : 'default',
+        status: 200
+   }
+
+   fetch(url,config).then(res => res.json())
+                    .then(res => {
+                        $('#update-mesg').show(100)
+                    })
+                    .catch(err => console.log(err))
+    clearFields()
 })
 
 

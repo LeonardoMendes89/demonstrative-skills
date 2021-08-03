@@ -58,13 +58,14 @@ body {
     margin: 1em 0; }
   .dock main #id {
     width: 10vw; }
-  .dock main #normal {
+  .dock main #normal, .dock main #edit {
     margin-bottom: 0.8em; }
-  .dock main #send {
-    cursor: pointer; }
   .dock main #send-mesg {
     font-weight: bold;
     width: 20vw; }
   .dock main #wrongsend-mesg {
+    font-weight: bold;
+    width: 25vw; }
+  .dock main #update-mesg {
     font-weight: bold;
     width: 25vw; }
