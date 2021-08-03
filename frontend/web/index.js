@@ -89,7 +89,11 @@ $('#search').change(function(){
                 .then(res => {
                     res.map(e => {
 
-                        if(search == e.id){
+                        if( search == e.id     ||
+                            search == e.name   ||
+                            search == e.job    ||
+                            search == e.salary ||
+                            search == e.sector   ){
 
                             let idDb = e.id
                             //let ulId = doc.createElement('ul')
@@ -121,6 +125,8 @@ $('#search').change(function(){
                             //sector.innerHTML = ulSector*/
                             console.log(sectorDb)
 
+                        }else{
+                            console.log('user not found!')
                         }
                     })
                 })
@@ -128,10 +134,16 @@ $('#search').change(function(){
                     $('#noDataTable').show(100)
                 })
 })
-$('#search').keydown(function(){
-    $('#dataStandard').show()
-    $('#dataSearched').hide()
-}) 
+/**
+ * criar um metodo para caso o usuário,
+ * não seja achado, ele devolva um card que ao
+ * clicar, lança este evento:
+ * doc.location.reload() e recarrega a página
+ * 
+ * 
+ * criar um outro evento para caso valor o input
+ * seja == '' ao mudar ele recarrega a página.
+ */
 
 
 /**
