@@ -1,5 +1,5 @@
 let doc = document
-document.onload = addEventListener('load',()=>{
+doc.onload  = addEventListener('load',()=>{
     $('#alert').hide(1)
     $('#noDataTable').hide(1)
     $('#dataSearched').hide(1)
@@ -65,19 +65,18 @@ function dataTable(){
                     $('#noDataTable').show(100)
                 })
 }
-$('#search').keypress(function(){
+$('#search').change(function(){
     
     $('#dataStandard').hide()
     $('#dataSearched').show()
 
-    let id      = document.querySelector('#idDbSc')
-    let name    = document.querySelector('#nameDbSC')
-    let job     = document.querySelector('#jobDbSC')
-    let salary  = document.querySelector('#salaryDbSC')
-    let sector  = document.querySelector('#sectorDbSC')
+    let idSc        = document.querySelector('#idDbSc')
+    let nameSc      = document.querySelector('#nameDbSc')
+    let jobSc       = document.querySelector('#jobDbSc')
+    let salarySc    = document.querySelector('#salaryDbSC')
+    let sectorSc    = document.querySelector('#sectorDbSC')
 
     let search  = document.querySelector('#search').value
-    //alert(search)
 
     const url = `http://localhost:3003`
 
@@ -90,37 +89,39 @@ $('#search').keypress(function(){
                 .then(res => {
                     res.map(e => {
 
-                        if(search === e.name){
+                        if(search == e.id){
 
                             let idDb = e.id
-                            let ulId = doc.createElement('ul')
-                            ulId.append(idDb)
-                            id.append(ulId)
-    
-                             let nameDb = e.name.substring(0,15)
-                             let ulName = doc.createElement('ul')
-                             ulName.append(nameDb)
-                             name.append(ulName)
-    
-                             let jobDb = e.job.substring(0,15)
-                             let ulJob = doc.createElement('ul')
-                             ulJob.append(jobDb)
-                             job.append(ulJob)
-    
-                             let salaryDb = e.salary
-                             let ulSalary = doc.createElement('ul')
-                             ulSalary.append(salaryDb)
-                             salary.append(ulSalary)
-    
-                             let sectorDb = e.sector
-                             let ulSector = doc.createElement('ul')
-                             ulSector.append(sectorDb)
-                             sector.append(ulSector)
+                            //let ulId = doc.createElement('ul')
+                            //ulId.append(idDb)
+                            //idSc.innerHTML = ulId
+                            console.log(idDb)
 
-                        }else{
-                            return []
+                            let nameDb = e.name
+                            //let ulName = doc.createElement('ul')
+                            //ulName.append(nameDb)
+                            //nameSc.innerHTML = nameDb
+                            console.log(nameDb)
+    
+                            let jobDb = e.job
+                            //let ulJob = doc.createElement('ul')
+                            //ulJob.append(jobDb)
+                            //job.innerHTML = ulJob
+                            console.log(jobDb)
+    
+                            let salaryDb = e.salary
+                             //let ulSalary = doc.createElement('ul')
+                             //ulSalary.append(salaryDb)
+                             // salary.innerHTML = ulSalary
+                            console.log(salaryDb)
+    
+                            let sectorDb = e.sector
+                            //let ulSector = doc.createElement('ul')
+                            //ulSector.append(sectorDb)
+                            //sector.innerHTML = ulSector*/
+                            console.log(sectorDb)
+
                         }
-
                     })
                 })
                 .catch(_ => {
@@ -130,7 +131,7 @@ $('#search').keypress(function(){
 $('#search').keydown(function(){
     $('#dataStandard').show()
     $('#dataSearched').hide()
-})  
+}) 
 
 
 /**
