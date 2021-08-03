@@ -64,6 +64,8 @@ main {
     padding: 1em;
     border: solid 0.1pc #011126;
     background-color: #061F40; }
+  main #dataSearched {
+    margin: 1em 0; }
   main #noDataTable {
     margin: 1em 0;
     height: 10em;

@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="d-dev">
+
         <header>
             <strong>WORKER'S AREA&reg;</strong> 
             <div class="alert alert-light" id="alert" role="alert">
@@ -20,8 +21,30 @@
             <i class="fas fa-home" id="icon">  home</i>
             <input type="text" id="search" placeholder="search">
         </aside>
+
         <main>
-            <table>
+            <table id="dataSearched">
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>job</th>
+                    <th>salary</th>
+                    <th>sector</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="idDbSc"></td>
+                    <td id="nameDbSc"></td>
+                    <td id="jobDbSc"></td>
+                    <td id="salaryDbSc"></td>
+                    <td id="sectorDbSC"></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table id="dataStandard">
                 <thead>
                   <tr>
                     <th>id</th>
@@ -46,12 +69,14 @@
                    I'm sorry ocurred an error with the server!
                </div>
         </main>
+
         <footer>
             <i class="fas fa-copyright"></i> 
             <i>2021 worker's system have all rights reserved.</i>
             <strong id="admArea">admin</strong>
         </footer>
     </div>
+
 
     <div class="m-device">
         <header>header</header>
