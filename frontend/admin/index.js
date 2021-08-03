@@ -167,7 +167,7 @@ $('#update').click(function(){
    }
 
     const config = {
-        method: 'UPDATE',
+        method: 'PUT',
         body:JSON.stringify(data),
         headers :{
             'Content-Type': 'application/json'
@@ -184,5 +184,7 @@ $('#update').click(function(){
                     .catch(err => console.log(err))
     clearFields()
 })
-
+$('#delete').click(function(){
+    alert('deleted')
+})
 
