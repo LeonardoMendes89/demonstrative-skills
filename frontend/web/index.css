@@ -51,7 +51,8 @@ main {
   overflow-y: scroll;
   overflow-x: hidden; }
   main table {
-    width: 100%; }
+    width: 100%;
+    box-shadow: 0px 0px 7px whitesmoke; }
   main table thead, main table tbody {
     text-align: center; }
   main table thead tr th {
@@ -63,6 +64,19 @@ main {
     padding: 1em;
     border: solid 0.1pc #011126;
     background-color: #061F40; }
+  main #noDataTable {
+    margin: 1em 0;
+    height: 10em;
+    width: 100%;
+    font-weight: bold;
+    font-size: xx-large;
+    background: #061F40;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 7px whitesmoke; }
 
 footer {
   grid-area: footer;

@@ -1,6 +1,7 @@
 let doc = document
 document.onload = addEventListener('load',()=>{
     $('#alert').hide(1)
+    $('#noDataTable').hide(1)
     dataTable()
 })
 $('.sair').click(function(){
@@ -59,5 +60,7 @@ function dataTable(){
                          sector.append(ulSector)
                     })
                 })
-                .catch(err => console.log(err))
+                .catch(_ => {
+                    $('#noDataTable').show(100)
+                })
 }

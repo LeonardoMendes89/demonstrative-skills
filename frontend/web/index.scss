@@ -5,6 +5,7 @@
  $smoke:whitesmoke;
  $grey:#9CA1A6;
  $val:0.5em;
+ $center:center;
  $empty-val:none;
  @mixin display($scr){
     display:$scr;
@@ -42,7 +43,7 @@
  }
 header{
     @include area(header);
-    @include d_flex(flex,row,space-between,center);
+    @include d_flex(flex,row,space-between,$center);
     background: linear-gradient(63deg, $s-color 45%, $ms-color 55%);
     text-decoration: double;
     padding: 1em;
@@ -89,9 +90,10 @@ main{
 
     table{
         width:100%;
+        box-shadow:0px 0px 7px $smoke;
     }
     table thead, table tbody{
-        text-align:center;
+        text-align:$center;
     }
     table thead tr th{
         @include size(large);
@@ -104,13 +106,24 @@ main{
         border:solid 0.1pc $s-color;
         background-color:$ms-color;
     }
+    #noDataTable{
+        margin:1em 0;
+        height:10em;
+        width:100%;
+        font-weight:bold;
+        font-size:xx-large;
+        background:$ms-color;
+        text-align:$center;
+        @include d_flex(flex,row,center,center);
+        box-shadow:0px 0px 7px $smoke;
+    }
 }
 footer{
     @include area(footer);
     background-color:#F2F2F2;
     color:#011126;
     padding:0.2em;
-    @include d_flex(flex,row,flex-start,center);
+    @include d_flex(flex,row,flex-start,$center);
         i{
             margin-right:5px; 
         }
