@@ -82,8 +82,28 @@ aside{
 }
 main{
     @include area(main);
-    padding:calculation($val,3);
+    padding:calculation($val,2);
     background-color:$grey;
+    overflow-y:scroll;
+    overflow-x:hidden;
+
+    table{
+        width:100%;
+    }
+    table thead, table tbody{
+        text-align:center;
+    }
+    table thead tr th{
+        @include size(large);
+        padding:1em;
+        border:solid 0.1pc rgba($color: #000000, $alpha: 1.0);
+        background-color:$s-color;
+    }
+    table tbody tr td{
+        padding:1em;
+        border:solid 0.1pc rgba($color: #000000, $alpha: 1.0);
+        background-color:$ms-color;
+    }
 }
 footer{
     @include area(footer);

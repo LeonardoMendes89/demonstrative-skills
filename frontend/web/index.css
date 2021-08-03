@@ -46,8 +46,23 @@ aside {
 
 main {
   grid-area: main;
-  padding: 1.5em;
-  background-color: #9CA1A6; }
+  padding: 1em;
+  background-color: #9CA1A6;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  main table {
+    width: 100%; }
+  main table thead, main table tbody {
+    text-align: center; }
+  main table thead tr th {
+    font-size: large;
+    padding: 1em;
+    border: solid 0.1pc black;
+    background-color: #011126; }
+  main table tbody tr td {
+    padding: 1em;
+    border: solid 0.1pc black;
+    background-color: #061F40; }
 
 footer {
   grid-area: footer;
