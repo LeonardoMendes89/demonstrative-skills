@@ -5,6 +5,7 @@ doc.onload = addEventListener('load',()=>{
     $('#send-mesg').hide(1)
     $('#wrongsend-mesg').hide(1)
     $('#update-mesg').hide(1)
+    $('#delete-mesg').hide(1)
 })
 doc.onclick = addEventListener('click',e => e.preventDefault())
 $('#homeArea').click(function(){
@@ -42,6 +43,7 @@ $('input').mouseenter(function(){
     $('#wrongsend-mesg').hide(100)
     $('#send-mesg').hide(100)
     $('#update-mesg').hide(100)
+    $('#delete-mesg').hide(100)
 })
 $('#send').click(function(){
 
@@ -178,13 +180,26 @@ $('#update').click(function(){
    }
 
    fetch(url,config).then(res => res.json())
-                    .then(res => {
+                    .then(_ => {
                         $('#update-mesg').show(100)
                     })
                     .catch(err => console.log(err))
     clearFields()
 })
 $('#delete').click(function(){
-    alert('deleted')
+    const id = document.querySelector('#id').value
+
+    const url = `http://localhost:3003/delete/${id}`
+
+    const config = {
+        method: 'DELETE'
+   }
+
+   fetch(url,config).then(res => res.json())
+                    .then(_ => {
+                        $('#delete-mesg').show(100)
+                    })
+                    .catch(err => console.log(err))
+    clearFields()
 })
 

@@ -66,6 +66,6 @@ body {
   .dock main #wrongsend-mesg {
     font-weight: bold;
     width: 25vw; }
-  .dock main #update-mesg {
+  .dock main #update-mesg, .dock main #delete-mesg {
     font-weight: bold;
     width: 25vw; }
