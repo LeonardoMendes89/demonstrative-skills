@@ -96,12 +96,12 @@ main{
     table thead tr th{
         @include size(large);
         padding:1em;
-        border:solid 0.1pc rgba($color: #000000, $alpha: 1.0);
+        border:solid 0.1pc $s-color;
         background-color:$s-color;
     }
     table tbody tr td{
         padding:1em;
-        border:solid 0.1pc rgba($color: #000000, $alpha: 1.0);
+        border:solid 0.1pc $s-color;
         background-color:$ms-color;
     }
 }
