@@ -21,26 +21,30 @@
             <input type="text" id="search" placeholder="search">
         </aside>
         <main>
-            <table class="table">
+            <table>
                 <thead>
                   <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">name</th>
-                    <th scope="col">job</th>
-                    <th scope="col">salary</th>
-                    <th scope="col">sector</th>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>job</th>
+                    <th>salary</th>
+                    <th>sector</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>engineer</td>
-                    <td>3568.65</td>
-                    <td>system information</td>
+                    <td id="idDb"></td>
+                    <td id="nameDb"></td>
+                    <td id="jobDb"></td>
+                    <td id="salaryDb"></td>
+                    <td id="sectorDb"></td>
                   </tr>
                 </tbody>
               </table>
+
+              <div id="noDataTable">
+                   i'm sorry ocurred an error with the server!
+               </div>
         </main>
         <footer>
             <i class="fas fa-copyright"></i> 
