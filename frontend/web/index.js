@@ -108,10 +108,16 @@
                                                         provavelmento port ser um 
                                                         tipo float.
 
-                                                    let salaryDb = e.salary
-                                                    salarySc.innerHTML = salaryDb
-                                                    
+                                                        i  = e.salary
+                                                        salarySc.innerHTML = i
                                                     */
+
+                                                    //retorna os valores e suas respectivas,
+                                                    //respostas em pesquisa, porém retorna,
+                                                    //um numero n de cliques > 1
+
+                                                    i = e.salary
+                                                    console.log(i)
                                                 
                                                     i = e.sector
                                                     sectorSc.innerHTML = i
@@ -131,7 +137,25 @@
     })
 
 
+/**
+ * 
+ * problema 1:
+ *      o tipo salário está gerando erro,
+ *      pode ser pelo seu tipo float ou outro
+ *      problema. 
 
+                                                    
+ * problema 2:
+ *      o laço for não retornar todos os resultados,
+ *      encontrados, só retornar um em (n) resultados encontrados.
+ * 
+ *  query test:
+            SELECT COUNT (*) salary
+            FROM people WHERE job = 'security';
+
+            SELECT COUNT (*) id 
+            FROM people WHERE job = 'junior software engineer';
+ */
 
 
 
