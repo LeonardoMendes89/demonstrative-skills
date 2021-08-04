@@ -1,24 +1,90 @@
-/*const knex = require('./knex')
+const port    = 3005
+const express = require('express')
+const app     = express()
 
-let conConsole = {
-    data :() => 
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
+const user = []
+
+    /**
+     * {
+            "id":1,
+            "name":"Mendes",
+            "email":"mendes@gmail.com",
+            "login":1234
+        }
          {
-            knex.select('*').table('tests')    
-                .then(test => console.log(test))
-                .catch(err => console.log(err))
-            }
-}
-let con = {
-    data :() => 
+            "id":2,
+            "name":"Ruan",
+            "email":"mendes@gmail.com",
+            "login":1234
+        }
+
          {
-            knex.select('*').table('tests')    
-                .then(test => test).catch(err => err)
-            }
-}
-let getDataConsole = conConsole.data() 
-let getData        = con.data()
+            "id":3,
+            "name":"Val",
+            "email":"mendes@gmail.com",
+            "login":1234
+        }
+    * 
+    * 
+    */
 
-return {    getDataConsole, getData    }
+app.get('/search',(req,res) =>{
+    //  http://localhost:3005/search?name=mendes&name=Sousa
+    const query = req.query
+    console.log(query)
+    res.send({
+       query
+    })
+})
 
-module.exports =  getData*/
+app.get('/searched',(req,res) =>{
+    //  http://localhost:3005/searched?name=MendesSousa&job=SftwareEgineer&salary=9000
+        const {name,job,salary} = req.query
+        
+        console.log(name +','+ job + ',' + salary)
+        return res.status(200).json({
+            name,
+            job,
+            salary
+        })
+    })
 
+app.get('/adm',(req,res) => {
+    //   http://localhost:3005/adm
+    return res.status(200).json(user)
+})
+//tá errado
+app.get('/adm',(req,res)=>{
+    //   http://localhost:3005/adm?named=nome
+    const  named    = req.query
+    const { name }  = req.body
+
+    if(named == name){
+        const { email, login } = req.body
+        return res.status(200).json({email,login})
+    }else{
+        return res.status(200).json({
+            msg:'usuário não encontrado!'
+        })
+    }
+})
+
+app.post('/adm/insert',(req,res) =>{
+    //   http://localhost:3005/adm/insert
+    const data = {
+        id   :req.body.id,
+        name :req.body.name,
+        email: req.body.email,
+        login: req.body.login
+    }
+
+    let users = user.push(data)
+    return res.status(201).json(users)
+})
+
+app.listen(port,()=>{
+    console.log(`online into ${port}`)
+})
