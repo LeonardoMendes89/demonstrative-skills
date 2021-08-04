@@ -89,33 +89,34 @@
                         .then(res => res.json())
                         .then(res => {
                             res.map(e => {
-        
                                 if( 
                                     search === e.name   ||
                                     search === e.job    ||
                                     search === e.sector   ){
-        
-                                    let idDb = e.id
-                                    idSc.innerHTML = idDb
-        
-                                    let nameDb = e.name
-                                    nameSc.innerHTML = nameDb
-            
-                                    let jobDb = e.job
-                                    jobSc.innerHTML = jobDb
-                                        
-                                    /*
-                                        gerando erro ao retornar,
-                                        provavelmento port ser um 
-                                        tipo float.
+                                        for(let i in search){
+                                                    i = e.id
+                                                    idSc.innerHTML = i
+                        
+                                                    i = e.name
+                                                    nameSc.innerHTML = i
+                            
+                                                    i = e.job
+                                                    jobSc.innerHTML = i
+                                                        
+                                                    /*
+                                                        gerando erro ao retornar,
+                                                        provavelmento port ser um 
+                                                        tipo float.
 
-                                    let salaryDb = e.salary
-                                    salarySc.innerHTML = salaryDb
-                                    
-                                    */
-                                 
-                                    let sectorDb = e.sector
-                                    sectorSc.innerHTML = sectorDb
+                                                    let salaryDb = e.salary
+                                                    salarySc.innerHTML = salaryDb
+                                                    
+                                                    */
+                                                
+                                                    i = e.sector
+                                                    sectorSc.innerHTML = i
+                                                        
+                                                }
                                 }
                             })
                         })
