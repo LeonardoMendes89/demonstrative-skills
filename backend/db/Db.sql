@@ -8,4 +8,7 @@ INSERT INTO people VALUES(2,'Miles Bennett Dyson','senior software engineer', 93
 
 SELECT * FROM people;
 
+ALTER TABLE people DROP COLUMN salary; 
+ALTER TABLE people ADD COLUMN salary NUMERIC(250,2); 
+
 \q

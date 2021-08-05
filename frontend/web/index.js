@@ -21,8 +21,8 @@
         let id      = document.querySelector('#idDb')
         let name    = document.querySelector('#nameDb')
         let job     = document.querySelector('#jobDb')
-        let salary  = document.querySelector('#salaryDb')
         let sector  = document.querySelector('#sectorDb')
+        let salary  = document.querySelector('#salaryDb')
         
         const url = 'http://localhost:3003'
 
@@ -73,8 +73,8 @@
             let idSc        = doc.querySelector('#idDbSc')
             let nameSc      = doc.querySelector('#nameDbSc')
             let jobSc       = doc.querySelector('#jobDbSc')
-            let salarySc    = doc.querySelector('#salaryDbSC')
             let sectorSc    = doc.querySelector('#sectorDbSC')
+            let salarySc    = doc.querySelector('#salaryDbSc')
 
             let search      = $(this).val()
             let url = `http://localhost:3003/search/name/${search}`
@@ -100,7 +100,6 @@
                                 i = e.sector.substring(0,15)
                                 sectorSc.innerHTML = i
                                 
-                                //não renderiza
                                 i  = e.salary
                                 salarySc.innerHTML = i
                             }
@@ -121,8 +120,8 @@
             let idSc        = doc.querySelector('#idDbSc')
             let nameSc      = doc.querySelector('#nameDbSc')
             let jobSc       = doc.querySelector('#jobDbSc')
-            let salarySc    = doc.querySelector('#salaryDbSC')
             let sectorSc    = doc.querySelector('#sectorDbSC')
+            let salarySc    = doc.querySelector('#salaryDbSc')
 
             let search      = $(this).val()
             let url = `http://localhost:3003/search/job/${search}`
@@ -148,7 +147,6 @@
                                 i = e.sector.substring(0,15)
                                 sectorSc.innerHTML = i
 
-                                //não renderiza
                                 i  = e.salary
                                 salarySc.innerHTML = i
                             }
@@ -169,8 +167,8 @@
             let idSc        = doc.querySelector('#idDbSc')
             let nameSc      = doc.querySelector('#nameDbSc')
             let jobSc       = doc.querySelector('#jobDbSc')
-            let salarySc    = doc.querySelector('#salaryDbSC')
             let sectorSc    = doc.querySelector('#sectorDbSC')
+            let salarySc    = doc.querySelector('#salaryDbSc')
 
             let search      = $(this).val()
             let url = `http://localhost:3003/search/sector/${search}`
@@ -196,7 +194,6 @@
                                 i = e.sector.substring(0,15)
                                 sectorSc.innerHTML = i
 
-                                //não renderiza
                                 i  = e.salary
                                 salarySc.innerHTML = i
                             }
@@ -215,11 +212,8 @@
    * problema 1:
    *    criei os endpoints de chamada de busca,
    *    porém o json chama todos os elementos buscados,
-   *    entretanto a ui não renderiza todos
+   *    entretanto a ui não renderiza todos.
    * 
-   * problema 2:
-   *    persisti o erro de não renderização,
-   *    do salário.
    */
 
 
