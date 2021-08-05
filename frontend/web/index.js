@@ -91,17 +91,18 @@
                                 i = e.id
                                 idSc.innerHTML = i
     
-                                i = e.name
+                                i = e.name.substring(0,15)
                                 nameSc.innerHTML = i
         
-                                i = e.job
+                                i = e.job.substring(0,15)
                                 jobSc.innerHTML = i
 
-                                /*i  = e.salary
-                                salarySc.innerHTML = i*/
-
-                                i = e.sector
+                                i = e.sector.substring(0,15)
                                 sectorSc.innerHTML = i
+                                
+                                //não renderiza
+                                i  = e.salary
+                                salarySc.innerHTML = i
                             }
                         })
                     })
@@ -138,17 +139,18 @@
                                 i = e.id
                                 idSc.innerHTML = i
     
-                                i = e.name
+                                i = e.name.substring(0,15)
                                 nameSc.innerHTML = i
         
-                                i = e.job
+                                i = e.job.substring(0,15)
                                 jobSc.innerHTML = i
 
-                                /*i  = e.salary
-                                salarySc.innerHTML = i*/
-
-                                i = e.sector
+                                i = e.sector.substring(0,15)
                                 sectorSc.innerHTML = i
+
+                                //não renderiza
+                                i  = e.salary
+                                salarySc.innerHTML = i
                             }
                         })
                     })
@@ -185,17 +187,18 @@
                                 i = e.id
                                 idSc.innerHTML = i
     
-                                i = e.name
+                                i = e.name.substring(0,15)
                                 nameSc.innerHTML = i
         
-                                i = e.job
+                                i = e.job.substring(0,15)
                                 jobSc.innerHTML = i
 
-                                /*i  = e.salary
-                                salarySc.innerHTML = i*/
-
-                                i = e.sector
+                                i = e.sector.substring(0,15)
                                 sectorSc.innerHTML = i
+
+                                //não renderiza
+                                i  = e.salary
+                                salarySc.innerHTML = i
                             }
                         })
                     })
@@ -208,7 +211,16 @@
     })
 
 
-  
+  /**
+   * problema 1:
+   *    criei os endpoints de chamada de busca,
+   *    porém o json chama todos os elementos buscados,
+   *    entretanto a ui não renderiza todos
+   * 
+   * problema 2:
+   *    persisti o erro de não renderização,
+   *    do salário.
+   */
 
 
 
