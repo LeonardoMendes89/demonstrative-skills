@@ -1,9 +1,9 @@
 const knex = require('../knex/knx')
 
 module.exports = app => {
-    const getByQueryData = async(req, res) => {
+    const getByQueryDataName = async(req, res) => {
         let data = await knex.where({
-                            name: req.query.name 
+                            name: req.params.name  
                         })
                        .select('*')
                        .table('people')
@@ -11,5 +11,16 @@ module.exports = app => {
                        .catch(err => res.status(500).json(err))
     } 
 
-    return { getByQueryData }
+    const getByQueryDataJob =  async(req, res) => {
+        let data = await knex.where({
+                            job: req.params.job 
+                        })
+                       .select('*')
+                       .table('people')
+                       .then(e => res.status(200).json(e))
+                       .catch(err => res.status(500).json(err))
+    }
+
+
+    return { getByQueryDataName, getByQueryDataJob }
 }

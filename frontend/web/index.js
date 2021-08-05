@@ -66,96 +66,10 @@
                     })
     }
     $('#search').change(function(){
-        if($(this).val() != ''){
-
-            $('#dataStandard').hide()
-            $('#dataSearched').show()
         
-            let idSc        = doc.querySelector('#idDbSc')
-            let nameSc      = doc.querySelector('#nameDbSc')
-            let jobSc       = doc.querySelector('#jobDbSc')
-            let salarySc    = doc.querySelector('#salaryDbSC')
-            let sectorSc    = doc.querySelector('#sectorDbSC')
-        
-            let search      = $(this).val()
-        
-            const url       = `http://localhost:3003`
-        
-            const config = {
-                method :'GET'
-            }
-        
-            fetch(url,config)
-                        .then(res => res.json())
-                        .then(res => {
-                            res.map(e => {
-                                if( 
-                                    search === e.name   ||
-                                    search === e.job    ||
-                                    search === e.sector   ){
-                                        for(let i in search){
-                                                    i = e.id
-                                                    idSc.innerHTML = i
-                        
-                                                    i = e.name
-                                                    nameSc.innerHTML = i
-                            
-                                                    i = e.job
-                                                    jobSc.innerHTML = i
-                                                        
-                                                    /*
-                                                        gerando erro ao retornar,
-                                                        provavelmento port ser um 
-                                                        tipo float.
-
-                                                        i  = e.salary
-                                                        salarySc.innerHTML = i
-                                                    */
-
-                                                    //retorna os valores e suas respectivas,
-                                                    //respostas em pesquisa, porém retorna,
-                                                    //um numero n de cliques > 1
-
-                                                    i = e.salary
-                                                    console.log(i)
-                                                
-                                                    i = e.sector
-                                                    sectorSc.innerHTML = i
-                                                        
-                                                }
-                                }
-                            })
-                        })
-                        .catch(_ => {
-                            $('#noDataTable').show(100)
-                        })
-
-        }else{
-            $('#dataStandard' ).show()
-            $('#dataSearched' ).hide()
-        }
     })
 
-
-/**
- * 
- * problema 1:
- *      o tipo salário está gerando erro,
- *      pode ser pelo seu tipo float ou outro
- *      problema. 
-
-                                                    
- * problema 2:
- *      o laço for não retornar todos os resultados,
- *      encontrados, só retornar um em (n) resultados encontrados.
- * 
- *  query test:
-            SELECT COUNT (*) salary
-            FROM people WHERE job = 'security';
-
-            SELECT COUNT (*) id 
-            FROM people WHERE job = 'junior software engineer';
- */
+  
 
 
 
