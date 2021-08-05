@@ -11,7 +11,7 @@ module.exports = app => {
                        .catch(err => res.status(500).json(err))
     } 
 
-    const getByQueryDataJob =  async(req, res) => {
+    const getByQueryDataJob = async(req, res) => {
         let data = await knex.where({
                             job: req.params.job 
                         })
@@ -20,5 +20,16 @@ module.exports = app => {
                        .then(e => res.status(200).json(e))
                        .catch(err => res.status(500).json(err))
     }
-    return { getByQueryDataName, getByQueryDataJob }
+    
+    const getByQueryDataSector = async(req, res) => {
+        let data = await knex.where({
+                            sector: req.params.sector 
+                        })
+                       .select('*')
+                       .table('people')
+                       .then(e => res.status(200).json(e))
+                       .catch(err => res.status(500).json(err))
+    }
+
+    return { getByQueryDataName, getByQueryDataJob, getByQueryDataSector }
 }
