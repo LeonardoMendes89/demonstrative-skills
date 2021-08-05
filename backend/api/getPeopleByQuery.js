@@ -20,7 +20,5 @@ module.exports = app => {
                        .then(e => res.status(200).json(e))
                        .catch(err => res.status(500).json(err))
     }
-
-
     return { getByQueryDataName, getByQueryDataJob }
 }

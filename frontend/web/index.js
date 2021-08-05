@@ -66,8 +66,101 @@
                     })
     }
     $('#search').change(function(){
+        //http://localhost:3003/search/job/:job
+        if($(this).val() != ''){
+            $('#dataStandard').hide()
+            $('#dataSearched').show()
         
+            let idSc        = doc.querySelector('#idDbSc')
+            let nameSc      = doc.querySelector('#nameDbSc')
+            let jobSc       = doc.querySelector('#jobDbSc')
+            let salarySc    = doc.querySelector('#salaryDbSC')
+            let sectorSc    = doc.querySelector('#sectorDbSC')
+
+            let search      = $(this).val()
+            let url = `http://localhost:3003/search/name/${search}`
+            
+            const config = {
+                method :'GET'
+            }
+
+            fetch(url,config)
+                    .then(name => name.json())
+                    .then(name => {
+                        name.map(e =>{
+                            for(let i in search){
+                                i = e.id
+                                idSc.innerHTML = i
+    
+                                i = e.name
+                                nameSc.innerHTML = i
+        
+                                i = e.job
+                                jobSc.innerHTML = i
+
+                                /*i  = e.salary
+                                salarySc.innerHTML = i*/
+
+                                i = e.sector
+                                sectorSc.innerHTML = i
+                            }
+                        })
+                    })
+                    .catch()
+
+        }else if($(this).val() == ''){
+            $('#dataStandard').show()
+            $('#dataSearched').hide()
+        }
     })
+    $('#search').change(function(){
+        if($(this).val() != ''){
+            $('#dataStandard').hide()
+            $('#dataSearched').show()
+        
+            let idSc        = doc.querySelector('#idDbSc')
+            let nameSc      = doc.querySelector('#nameDbSc')
+            let jobSc       = doc.querySelector('#jobDbSc')
+            let salarySc    = doc.querySelector('#salaryDbSC')
+            let sectorSc    = doc.querySelector('#sectorDbSC')
+
+            let search      = $(this).val()
+            let url = `http://localhost:3003/search/job/${search}`
+            
+            const config = {
+                method :'GET'
+            }
+
+            fetch(url,config)
+                    .then(name => name.json())
+                    .then(name => {
+                        name.map(e =>{
+                            for(let i in search){
+                                i = e.id
+                                idSc.innerHTML = i
+    
+                                i = e.name
+                                nameSc.innerHTML = i
+        
+                                i = e.job
+                                jobSc.innerHTML = i
+
+                                /*i  = e.salary
+                                salarySc.innerHTML = i*/
+
+                                i = e.sector
+                                sectorSc.innerHTML = i
+                            }
+                        })
+                    })
+                    .catch()
+
+        }else if($(this).val() == ''){
+            $('#dataStandard').show()
+            $('#dataSearched').hide()
+        }
+    })
+
 
   
 
