@@ -56,11 +56,28 @@ app.get('/adm',(req,res) => {
     //   http://localhost:3005/adm
     return res.status(200).json(user)
 })
-//tá errado
-app.get('/adm',(req,res)=>{
-    //   http://localhost:3005/adm?named=nome
-    const  named    = req.query
+
+//erro
+app.get('/admquery',(req,res)=>{
+    //   http://localhost:3005/admquery?named=nome
+    let     named   = req.query.named
     const { name }  = req.body
+
+    if(named == name){
+        const { email, login } = req.body
+        return res.status(200).json({email,login})
+    }else{
+        return res.status(200).json({
+            msg:'usuário não encontrado!'
+        })
+    }
+})
+
+//erro
+app.get('/admparam/:param',(req,res)=>{
+    //   http://localhost:3005/admparam/:param
+    let     named    = req.params.named
+    const { name }   = req.body
 
     if(named == name){
         const { email, login } = req.body
