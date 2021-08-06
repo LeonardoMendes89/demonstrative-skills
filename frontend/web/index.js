@@ -213,11 +213,16 @@
    *    criei os endpoints de chamada de busca,
    *    porém o json chama todos os elementos buscados,
    *    entretanto a ui não renderiza todos.
-   *    
-        tentativa de solução:
-            use filter ou foreach no lugar do map,
-            ou outro método de array para ver se 
-            resoluciona este problema.
+
+
+    * O erro se dá pelo uso do parametro,
+    * innerHTML ele retorna somente um elemento,
+    * na chamada, em cada caso o último,
+    * em uma estrutura de dados com [n] elementos
+    * somente o último será invocado,
+    * então devo usar o método append e não o innerHTML
+    * e ai está resolvido o problema. 
+
    */
 
 

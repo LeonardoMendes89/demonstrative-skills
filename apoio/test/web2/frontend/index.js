@@ -77,7 +77,23 @@ function callLogin(){
           method :'GET'
     }   
     
-    fetch(url,config).then(login => console.log(login.json()))
+    fetch(url,config).then(login => login.json())
+                     .then(login => {
+                        login.map(login =>{
+                           let loginId = '[' + login.id + ','
+                           area.append(loginId)
+
+                           let loginName = login.name + ','
+                           area.append(loginName)
+
+                           let loginEmail = login.email + ','
+                           area.append(loginEmail)
+
+                           let loginLogin = login.login + ']'
+                           area.append(loginLogin)
+                        })
+                     })
+                     .catch()
   })
 }
 callLogin()
@@ -88,3 +104,15 @@ function refresh(){
   })
 }
 refresh()
+
+/**
+ * 
+ * O erro se dá pelo uso do parametro,
+ * innerHTML ele retorna somente um elemento,
+ * na chamada, em cada caso o último,
+ * em uma estrutura de dados com [n] elementos
+ * somente o último será invocado,
+ * então devo usar o método append e não o innerHTML
+ * e ai está resolvido o problema. 
+ * 
+ */
