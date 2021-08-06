@@ -233,8 +233,15 @@
  
 
 
+/**
 
+    gera um outro problema,
+    ao mudar o cursor ele adiciona 
+    chamadas do elemento invocado em
+    loop, caso não se apague uma letra
+    dos dados buscados!
 
+ */
 
 
 
