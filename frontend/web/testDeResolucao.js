@@ -233,7 +233,13 @@
         }
     })
     
-  /**
+/*
+	Fazer o index.html apontar para este,
+	arquivo com o intuito de validar os novos métodos.
+	
+*/
+	
+/**
    * problema:
    *    o append ele adiciona elementos,
         devo pesquisar um evento que, quando
@@ -241,7 +247,7 @@
         ele recarregue a página, para não permitir a adição 
         de dados. 
         ele só carrega ao clicar no elemento.
-   */
+*/
 
 
 
