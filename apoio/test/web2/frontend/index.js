@@ -20,19 +20,17 @@ function callName(){
                        .then(name => {
                           name.map(name =>{
                              
-                              let idTst = name.id
-                              let ulId  = doc.createElement('ul')
-                              ulId.append(idTst)
-                              area.append(ulId)
+                              let idTst  = '[' + name.id       + ','
+                              area.append(idTst)
 
-                              /*let nameTst = name.name
+                              let nameTst = name.name    + ','
                               area.append(nameTst)
 
-                              let emailTst  = name.email
+                              let emailTst  = name.email + ','
                               area.append(emailTst)
 
-                              let loginTst  = name.login
-                              area.append(loginTst)*/
+                              let loginTst  = name.login + ']'
+                              area.append(loginTst)
                           })
                        })
                        .catch(err => console.log(err))
@@ -43,8 +41,29 @@ callName()
 function callEmail(){
   let email = doc.querySelector('.email')
   doc.querySelector('#email').addEventListener('click',()=>{
-         let emailData = email.value
-         area.innerHTML = emailData
+       const url  = `http://localhost:3009/test/email?email=${email.value}`
+      
+        const config = {
+              method :'GET'
+        }    
+
+        fetch(url,config).then(email => email.json())
+                         .then(email =>{
+                           email.map(email =>{
+                              let emailId = email.id
+                              area.append(emailId)
+
+                              let emailName = email.name
+                              area.append(emailName)
+
+                              let emailEmail = email.email
+                              area.append(emailEmail)
+
+                              let emailLogin = email.login
+                              area.append(emailLogin)
+                           })
+                         })
+                         .catch()
   })
 }
 callEmail()
