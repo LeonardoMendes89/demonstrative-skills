@@ -44,7 +44,7 @@ app.get('/',(req,res) =>{
 })
 
 app.get('/name/:name', async(req,res) =>{
-    //url: http://localhost:3009/test/name/:name
+    //url: http://localhost:3009/name/:name
     await knex.where({
             name :req.params.name
         }).select('*').table('testusers')
@@ -59,7 +59,7 @@ app.get('/name/:name', async(req,res) =>{
 })
 
 app.get('/test/email', async(req,res) =>{
-    //url: http://localhost:3009/test/email?email=email
+    //url: http://localhost:3009/email?email=email
     await knex.where({
             email :req.query.email
         }).select('*').table('testusers')
@@ -74,7 +74,7 @@ app.get('/test/email', async(req,res) =>{
 })
 
 app.get('/test/login', async(req,res) =>{
-    //url: http://localhost:3009/test/login?login=login
+    //url: http://localhost:3009/login?login=login
     await knex.where({
             login :req.query.login
         }).select('*').table('testusers')
