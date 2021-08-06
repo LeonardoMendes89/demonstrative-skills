@@ -65,20 +65,7 @@
                         $('#noDataTable').show(100)
                     })
     }
-    //funciona mas não resolvi completamente 
-    //e gera um efeito desagradável
-    function empty(){
-        $('#search').mouseleave(function(){
-            let search    = document.querySelector('#search').value
-          
-            if(search === ''){
-                doc.location.reload()
-            }
-
-        }) 
-    }
-    empty()
-    $('#search').change(function(){
+    $('#search').keyup(function(){
         if($(this).val() != ''){
             $('#dataStandard').hide()
             $('#dataSearched').show()
@@ -133,7 +120,7 @@
             doc.location.reload()
         }
     })
-    $('#search').change(function(){
+    $('#search').keyup(function(){
         if($(this).val() != ''){
             $('#dataStandard').hide()
             $('#dataSearched').show()
@@ -188,7 +175,7 @@
             doc.location.reload()
         }
     })
-    $('#search').change(function(){
+    $('#search').keyup(function(){
         if($(this).val() != ''){
             $('#dataStandard').hide()
             $('#dataSearched').show()
@@ -243,15 +230,7 @@
              doc.location.reload()
         }
     }) 
-  /**
-   * problema:
-   *    o append ele adiciona elementos,
-        devo pesquisar um evento que, quando
-        o campo input estiver vazio no evento de mudança, 
-        ele recarregue a página, para não permitir a adição 
-        de dados. 
-        ele só carrega ao clicar no elemento.
-   */
+ 
 
 
 
