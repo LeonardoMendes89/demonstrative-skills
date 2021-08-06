@@ -30,6 +30,19 @@ app.listen(port, async(req,res) =>{
     console.log(`online in port :${port}`)
 })
 
+app.get('/',(req,res) =>{
+    // url: http://localhost:3009/
+    knex.select('*').table('testusers')
+                          .then(test => {
+                            res.status(200)
+                               .json(test)
+                           })
+                          .catch(err => {
+                            res.status(500)
+                               .json(err)
+                           })
+})
+
 app.get('/name/:name', async(req,res) =>{
     //url: http://localhost:3009/test/name/:name
     await knex.where({
