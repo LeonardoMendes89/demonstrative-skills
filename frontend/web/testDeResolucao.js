@@ -65,6 +65,19 @@
                         $('#noDataTable').show(100)
                     })
     }
+    //funciona mas não resolvi completamente 
+    //e gera um efeito desagradável
+    function empty(){
+        $('#search').mouseleave(function(){
+            let search    = document.querySelector('#search').value
+          
+            if(search === ''){
+                doc.location.reload()
+            }
+
+        }) 
+    }
+    empty()
     $('#search').change(function(){
         if($(this).val() != ''){
             $('#dataStandard').hide()
@@ -114,7 +127,7 @@
                                 salarySc.append(ulSalary)
                         })
                     })
-                    .catch(err => alert(err))
+                    .catch(err => console.log(err))
 
         }else if($(this).val() == ''){
             doc.location.reload()
@@ -169,11 +182,10 @@
                                 salarySc.append(ulSalary)
                         })
                     })
-                    .catch()
+                    .catch(err => console.log(err))
 
         }else if($(this).val() == ''){
-            $('#dataStandard').show()
-            $('#dataSearched').hide()
+            doc.location.reload()
         }
     })
     $('#search').change(function(){
@@ -225,21 +237,13 @@
                                 salarySc.append(ulSalary)
                         })
                     })
-                    .catch()
+                    .catch(err => console.log(err))
 
         }else if($(this).val() == ''){
-            $('#dataStandard').show()
-            $('#dataSearched').hide()
+             doc.location.reload()
         }
-    })
-    
-/*
-	Fazer o index.html apontar para este,
-	arquivo com o intuito de validar os novos métodos.
-	
-*/
-	
-/**
+    }) 
+  /**
    * problema:
    *    o append ele adiciona elementos,
         devo pesquisar um evento que, quando
@@ -247,7 +251,7 @@
         ele recarregue a página, para não permitir a adição 
         de dados. 
         ele só carrega ao clicar no elemento.
-*/
+   */
 
 
 
