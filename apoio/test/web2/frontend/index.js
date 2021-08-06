@@ -50,16 +50,16 @@ function callEmail(){
         fetch(url,config).then(email => email.json())
                          .then(email =>{
                            email.map(email =>{
-                              let emailId = email.id
+                              let emailId = '[' + email.id + ','
                               area.append(emailId)
 
-                              let emailName = email.name
+                              let emailName = email.name + ','
                               area.append(emailName)
 
-                              let emailEmail = email.email
+                              let emailEmail = email.email + ','
                               area.append(emailEmail)
 
-                              let emailLogin = email.login
+                              let emailLogin = email.login + ']'
                               area.append(emailLogin)
                            })
                          })
@@ -71,8 +71,13 @@ callEmail()
 function callLogin(){
   let login = doc.querySelector('.login')
   doc.querySelector('#login').addEventListener('click',()=>{
-         let loginBt = login.value
-         area.innerHTML = loginBt
+    const url  = `http://localhost:3009/test/login?login=${login.value}`
+      
+    const config = {
+          method :'GET'
+    }   
+    
+    fetch(url,config).then(login => console.log(login.json()))
   })
 }
 callLogin()
