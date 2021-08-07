@@ -86,33 +86,33 @@ $('#search').keyup(function(){
         fetch(url,config)
                 .then(name => name.json())
                 .then(name => {
-                    name.map(e =>{
+                    name.filter(e =>{
 
                             let id = e.id
                             let ulId  = doc.createElement('ul') 
-                            ulId.append(id)
-                            idSc.append(ulId)
-                         
+                            ulId.innerHTML = id
+                            idSc.insertAdjacentElement('afterbegin',ulId)
+                       
                             let name = e.name.substring(0,15)
                             let ulName  = doc.createElement('ul') 
-                            ulName.append(name)
-                            nameSc.append(ulName)
+                            ulName.innerHTML = name
+                            nameSc.insertAdjacentElement('afterbegin',ulName)
                           
                             let job = e.job.substring(0,15)
                             let ulJob  = doc.createElement('ul') 
-                            ulJob.append(job)
-                            jobSc.append(ulJob)
+                            ulJob.innerHTML = job
+                            jobSc.insertAdjacentElement('afterbegin',ulJob)
                            
                             let sector = e.sector.substring(0,15)
                             let ulSector  = doc.createElement('ul') 
-                            ulSector.append(sector)
-                            sectorSc.append(ulSector)
+                            ulSector.innerHTML = sector
+                            sectorSc.insertAdjacentElement('afterbegin',ulSector)
                             
                             let salary = e.salary.substring(0,15)
                             let ulSalary  = doc.createElement('ul') 
-                            ulSalary.append(salary)
-                            salarySc.append(ulSalary)
-                    })
+                            ulSalary.innerHTML = salary
+                            salarySc.insertAdjacentElement('afterbegin',ulSalary)
+                        })
                 })
                 .catch(err => console.log(err))
 
@@ -145,28 +145,28 @@ $('#search').keyup(function(){
                             
                             let id = e.id
                             let ulId  = doc.createElement('ul') 
-                            ulId.append(id)
-                            idSc.append(ulId)
+                            ulId.innerHTML = id
+                            idSc.insertAdjacentElement('afterbegin',ulId)
                          
                             let name = e.name.substring(0,15)
                             let ulName  = doc.createElement('ul') 
-                            ulName.append(name)
-                            nameSc.append(ulName)
+                            ulName.innerHTML = name
+                            nameSc.insertAdjacentElement('afterbegin',ulName)
                           
                             let job = e.job.substring(0,15)
                             let ulJob  = doc.createElement('ul') 
-                            ulJob.append(job)
-                            jobSc.append(ulJob)
+                            ulJob.innerHTML = job
+                            jobSc.insertAdjacentElement('afterbegin',ulJob)
                            
                             let sector = e.sector.substring(0,15)
                             let ulSector  = doc.createElement('ul') 
-                            ulSector.append(sector)
-                            sectorSc.append(ulSector)
+                            ulSector.innerHTML = sector
+                            sectorSc.insertAdjacentElement('afterbegin',ulSector)
                             
                             let salary = e.salary.substring(0,15)
                             let ulSalary  = doc.createElement('ul') 
-                            ulSalary.append(salary)
-                            salarySc.append(ulSalary)
+                            ulSalary.innerHTML = salary
+                            salarySc.insertAdjacentElement('afterbegin',ulSalary)
                     })
                 })
                 .catch(err => console.log(err))
@@ -200,28 +200,28 @@ $('#search').keyup(function(){
                             
                             let id = e.id
                             let ulId  = doc.createElement('ul') 
-                            ulId.append(id)
-                            idSc.append(ulId)
+                            ulId.innerHTML =id
+                            idSc.insertAdjacentElement('afterbegin',ulId)
                          
                             let name = e.name.substring(0,15)
                             let ulName  = doc.createElement('ul') 
-                            ulName.append(name)
-                            nameSc.append(ulName)
+                            ulName.innerHTML = name
+                            nameSc.insertAdjacentElement('afterbegin',ulName)
                           
                             let job = e.job.substring(0,15)
                             let ulJob  = doc.createElement('ul') 
-                            ulJob.append(job)
-                            jobSc.append(ulJob)
+                            ulJob.innerHTML = job
+                            jobSc.insertAdjacentElement('afterbegin',ulJob)
                            
                             let sector = e.sector.substring(0,15)
                             let ulSector  = doc.createElement('ul') 
-                            ulSector.append(sector)
-                            sectorSc.append(ulSector)
+                            ulSector.innerHTML = sector
+                            sectorSc.insertAdjacentElement('afterbegin',ulSector)
                             
                             let salary = e.salary.substring(0,15)
                             let ulSalary  = doc.createElement('ul') 
-                            ulSalary.append(salary)
-                            salarySc.append(ulSalary)
+                            ulSalary.innerHTML = salary
+                            salarySc.insertAdjacentElement('afterbegin',ulSalary)
                     })
                 })
                 .catch(err => console.log(err))
@@ -231,7 +231,7 @@ $('#search').keyup(function(){
     }
 }) 
 
-
+/**/
 
 /**
 
