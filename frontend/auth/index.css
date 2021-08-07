@@ -20,7 +20,7 @@ body {
     grid-template-areas: "img form" "img form"; }
     @media (max-device-width: 1023px) {
       body .dock {
-        display: none; } }
+        /*display:none;*/ } }
     body .dock .img {
       grid-area: img; }
     body .dock .form {

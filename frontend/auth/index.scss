@@ -58,8 +58,18 @@ body{
     color:$l-color;
 
     .dock{
-        @media(max-device-width:1023px){
+        @media screen and (max-device-width:1280px)
+                      and (max-device-height:800px)
+                      and (orientation:portrait){
             display:none;
+        }
+        @media(max-device-width:1023px){
+            /*display:none;*/
+        }
+        @media screen and (max-device-width:1024px) 
+        and(max-device-height:600px)
+        and(orientation:portrait){
+            /*display:none;*/
         }
         background-color:$l-color;
         /* em responsividade este valor não se adapta bem */
