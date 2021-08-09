@@ -69,6 +69,26 @@ body{
     and (-webkit-min-device-pixel-ratio: 1) { 
         @include d_flex(flex,column,center,center);
     }
+    @media screen  
+    and (max-device-width: 1024px){
+        .dock-mobile{
+            display:none;
+        }
+    }
+    @media screen  
+    and (max-device-width: 1023px)
+    and (orientation:landscape){
+        @include d_flex(flex,column,center,center);
+        .dock-mobile{
+            display:flex;
+        }
+        .form{
+            border:red solid 1pc;
+            @include percent(3%);
+            @include size(90vh,90vw);
+            @include d_flex(flex,column,center,center);
+        }
+    }
     .dock{
         @media screen 
         and (min-device-width: 1200px) 
@@ -157,6 +177,8 @@ body{
                         }
 
     }
+
+   
 
                             #empty,#alerting,#nofetch{
                                 width:60%;

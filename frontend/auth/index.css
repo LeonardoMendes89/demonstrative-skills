@@ -18,6 +18,26 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center; } }
+  @media screen and (max-device-width: 1024px) {
+    body .dock-mobile {
+      display: none; } }
+  @media screen and (max-device-width: 1023px) and (orientation: landscape) {
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      body .dock-mobile {
+        display: flex; }
+      body .form {
+        border: red solid 1pc;
+        margin: 3%;
+        height: 90vh;
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; } }
   body .dock {
     background-color: #E9E9E9;
     margin: 25vh;
