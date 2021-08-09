@@ -56,41 +56,38 @@ body{
     @include size(100%,100%);
     background-color:$s-color;
     color:$l-color;
-
+    @media screen 
+    and (min-device-width: 1200px) 
+    and (max-device-width: 1600px) 
+    and (-webkit-min-device-pixel-ratio: 1) { 
+        @include d_flex(flex,column,center,center)
+    }
+    @media screen 
+    and (max-device-width: 1024px) 
+    and (max-device-height: 1366px) 
+    and (orientation:portrait)
+    and (-webkit-min-device-pixel-ratio: 1) { 
+        @include d_flex(flex,column,center,center);
+    }
     .dock{
-
-        /*
-            dispositivos já estilizados ou com layouts definidos:
-            
-            854  x 480 | orientation:landscape
-            736  x 414 | orientation:landscape
-            732  x 412 | orientation:landscape
-            731  x 411 | orientation:landscape
-            667  x 375 | orientation:landscape
-            640  x 360 | orientation:landscape
-            640  x 384 | orientation:landscape
-            568  x 320 | orientation:landscape
-            533  x 320 | orientation:landscape
-            1024 x 600 | orientation:landscape
-        */
-
+        @media screen 
+        and (min-device-width: 1200px) 
+        and (max-device-width: 1600px) 
+        and (-webkit-min-device-pixel-ratio: 1) { 
+            @include size(450px,1260px);
+        }
+        @media screen 
+        and (max-device-width: 1024px) 
+        and (max-device-height: 1366px) 
+        and (orientation:portrait)
+        and (-webkit-min-device-pixel-ratio: 1) { 
+            @include size(450px,95vw);
+        }
         @media only screen 
-        and (min-device-width: 800px) 
-        and (max-device-width: 1280px) 
-        and (-webkit-min-device-pixel-ratio: 1.5) 
-        and (orientation: landscape) {
-            display:none;
-        }
-        @media(max-device-width:1023px){
-            /*display:none;*/
-        }
-        @media screen and (max-device-width:1024px) 
-        and(max-device-height:600px)
-        and(orientation:portrait){
-            /*display:none;*/
-        }
+        and (max-device-width: 1023px){
+                display:none;
+            }
         background-color:$l-color;
-        /* em responsividade este valor não se adapta bem */
         @include percent(25vh);
         @include radius(6px);
         @include size(250px,700px);
