@@ -25,10 +25,6 @@ body {
       justify-content: center;
       align-items: center; } }
   body .dock {
-    /*@media only screen 
-        and (max-device-width: 1023px){
-                display:none;
-            }*/
     background-color: #E9E9E9;
     margin: 25vh;
     border-radius: 6px;
@@ -46,27 +42,27 @@ body {
       body .dock {
         height: 450px;
         width: 95vw; } }
-    @media only screen and (max-device-width: 1023px) {
+    @media only screen and (max-device-width: 1023px) and (orientation: portrait) {
       body .dock {
-        border: red solid 1pc;
-        height: 60vh;
-        width: 60vw; }
+        display: none; } }
+    @media only screen and (max-device-width: 1023px) and (orientation: landscape) {
+      body .dock {
+        margin: 5vh;
+        height: 75vh;
+        width: 95vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center; }
         body .dock .img {
           display: none; }
         body .dock .form {
-          border: red solid 1pc;
-          margin: 3%;
-          height: 60%;
-          width: 60%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center; }
+          height: 100%;
+          width: 100%; }
         body .dock .form_camp {
-          border: red solid 1pc;
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: space-around;
           align-items: center; } }
     body .dock .img {
       grid-area: img; }

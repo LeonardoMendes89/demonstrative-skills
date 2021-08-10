@@ -88,26 +88,25 @@ body{
         and (-webkit-min-device-pixel-ratio: 1) { 
             @include size(450px,95vw);
         }
-        /*@media only screen 
-        and (max-device-width: 1023px){
-                display:none;
-            }*/
         @media only screen 
-        and (max-device-width: 1023px){
-            border:red solid 1pc;
-            @include size(60vh,60vw);
+        and (max-device-width: 1023px)
+        and (orientation:portrait){
+            display:none;
+        }
+        @media only screen 
+        and (max-device-width: 1023px)
+        and (orientation:landscape){
+            @include percent(5vh);
+            @include size(75vh,95vw);
+            @include d_flex(flex,column,space-around,center);
             .img{
                 display:none;
             }
             .form{
-                border:red solid 1pc;
-                @include percent(3%);
-                @include size(60%,60%);
-                @include d_flex(flex,column,center,center);
+                @include size(100%,100%);
             }
             .form_camp{
-                border:red solid 1pc;
-                 @include d_flex(flex,column,center,center);
+                 @include d_flex(flex,column,space-around,center);
             }  
         }
         background-color:$l-color;
