@@ -74,6 +74,11 @@ body{
     and (orientation:landscape){
         @include d_flex(flex,column,center,center);
     }
+    @media screen  
+    and (max-device-width: 1023px)
+    and (orientation:portrait){
+        @include d_flex(flex,column,center,center);
+    }
     .dock{
         @media screen 
         and (min-device-width: 1200px) 
@@ -108,6 +113,30 @@ body{
             .form_camp{
                  @include d_flex(flex,column,space-around,center);
             }  
+        }
+        @media only screen 
+        and (max-device-width: 1023px)
+        and (orientation:portrait){
+            @include f_size(3em);
+            @include size(40vh,90vw);
+            @include d_flex(flex,column,space-around,center);
+            .img{
+                display:none;
+            }
+            .form{
+                @include size(100%,100%);
+            }
+            .form_camp{
+                
+                 @include d_flex(flex,column,space-between,center);
+            }  
+            .title{
+                display:none;
+            }
+            .login{
+                                padding:1em;
+                font-weight:bold;
+            }
         }
         background-color:$l-color;
         @include percent(25vh);

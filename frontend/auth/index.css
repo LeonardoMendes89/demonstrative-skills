@@ -24,6 +24,12 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center; } }
+  @media screen and (max-device-width: 1023px) and (orientation: portrait) {
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; } }
   body .dock {
     background-color: #E9E9E9;
     margin: 25vh;
@@ -64,6 +70,30 @@ body {
           flex-direction: column;
           justify-content: space-around;
           align-items: center; } }
+    @media only screen and (max-device-width: 1023px) and (orientation: portrait) {
+      body .dock {
+        font-size: 3em;
+        height: 40vh;
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center; }
+        body .dock .img {
+          display: none; }
+        body .dock .form {
+          height: 100%;
+          width: 100%; }
+        body .dock .form_camp {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center; }
+        body .dock .title {
+          display: none; }
+        body .dock .login {
+          padding: 1em;
+          font-weight: bold; } }
     body .dock .img {
       grid-area: img; }
     body .dock .form {
