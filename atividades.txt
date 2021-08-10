@@ -1,22 +1,7 @@
-﻿dia 1 - construir a api de people,
-        construir a base de dados no postgres,
-        construir a page home/workers,
-        estilizar a page home/workers.
-dia 2 - construir a page auth,
-        estilizar a page auth,
-        criar as lógicas iniciais e dados mock
-        para acesso a home.
-dia 3 - criar a api de autenticação,
-        criar a base de dados de autenticação
+﻿ao finalizar,
+criar um mapa de atividades
+realizadas, conhecimento adquirido,
+erros resolvidos e não resolvidos.
 
-
-
-        estou com um problema na
-        exibição dos dados em JSON via 
-        api, estou retornando um objeto vazio,
-        porém em linha de console estou recebendo
-        os dados.
-
-dia 4 - testar a integração na comunicação dos
-	módulos(auth) e resolver o problema de exibição dos
-	dados.
+atividade do dia -  criar a responsividade,
+do módulo/pasta web
