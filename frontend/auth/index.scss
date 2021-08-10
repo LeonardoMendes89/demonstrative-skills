@@ -78,6 +78,14 @@ body{
     and (max-device-width: 1023px)
     and (orientation:portrait){
         @include d_flex(flex,column,center,center);
+        @include f_size(3em);
+        #alerting,#empty,#nofetch{
+            height:3em;
+            width:80vw;
+        }
+        .alert{
+            font-size:3em;
+        }
     }
     .dock{
         @media screen 
@@ -117,7 +125,6 @@ body{
         @media only screen 
         and (max-device-width: 1023px)
         and (orientation:portrait){
-            @include f_size(3em);
             @include size(40vh,90vw);
             @include d_flex(flex,column,space-around,center);
             .img{
@@ -134,7 +141,7 @@ body{
                 display:none;
             }
             .login{
-                                padding:1em;
+                padding:1em;
                 font-weight:bold;
             }
         }

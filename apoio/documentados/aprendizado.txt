@@ -1,18 +1,20 @@
 https://pt.stackoverflow.com/questions/386448/resolu%C3%A7%C3%A3o-m%C3%A1xima-ideal-para-exibir-conte%C3%BAdo-em-modo-mobile
 https://medium.com/@tassiogoncalvesg/entenda-de-uma-vez-por-todas-como-utilizar-o-height-100-no-css-6d72914a6748
+https://pt.stackoverflow.com/questions/337316/como-fazer-para-que-o-texto-se-adapte-ao-tamanho-da-div
+https://www.luis.blog.br/font-size-tamanho-da-letra-fonte-em-css.html
 
 
 
 
-media de proporção em dispositivos:
+media de proporï¿½ï¿½o em dispositivos:
 
   estes valores estudados
-  são médias aproximadas,
+  sï¿½o mï¿½dias aproximadas,
   para que eu tenha uma
-  base em valores na resolução 
+  base em valores na resoluï¿½ï¿½o 
   de interfaces dos dispositivos
-  com o intuito de aplicar técnicas
-  de responsividade mais rápido,
+  com o intuito de aplicar tï¿½cnicas
+  de responsividade mais rï¿½pido,
   mais produtivo e mais especializado.*
 
 

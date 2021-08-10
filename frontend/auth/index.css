@@ -29,7 +29,13 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center; } }
+      align-items: center;
+      font-size: 3em; }
+      body #alerting, body #empty, body #nofetch {
+        height: 3em;
+        width: 80vw; }
+      body .alert {
+        font-size: 3em; } }
   body .dock {
     background-color: #E9E9E9;
     margin: 25vh;
@@ -72,7 +78,6 @@ body {
           align-items: center; } }
     @media only screen and (max-device-width: 1023px) and (orientation: portrait) {
       body .dock {
-        font-size: 3em;
         height: 40vh;
         width: 90vw;
         display: flex;
