@@ -70,24 +70,9 @@ body{
         @include d_flex(flex,column,center,center);
     }
     @media screen  
-    and (max-device-width: 1024px){
-        .dock-mobile{
-            display:none;
-        }
-    }
-    @media screen  
     and (max-device-width: 1023px)
     and (orientation:landscape){
         @include d_flex(flex,column,center,center);
-        .dock-mobile{
-            display:flex;
-        }
-        .form{
-            border:red solid 1pc;
-            @include percent(3%);
-            @include size(90vh,90vw);
-            @include d_flex(flex,column,center,center);
-        }
     }
     .dock{
         @media screen 
@@ -103,10 +88,28 @@ body{
         and (-webkit-min-device-pixel-ratio: 1) { 
             @include size(450px,95vw);
         }
-        @media only screen 
+        /*@media only screen 
         and (max-device-width: 1023px){
                 display:none;
+            }*/
+        @media only screen 
+        and (max-device-width: 1023px){
+            border:red solid 1pc;
+            @include size(60vh,60vw);
+            .img{
+                display:none;
             }
+            .form{
+                border:red solid 1pc;
+                @include percent(3%);
+                @include size(60%,60%);
+                @include d_flex(flex,column,center,center);
+            }
+            .form_camp{
+                border:red solid 1pc;
+                 @include d_flex(flex,column,center,center);
+            }  
+        }
         background-color:$l-color;
         @include percent(25vh);
         @include radius(6px);

@@ -18,27 +18,17 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center; } }
-  @media screen and (max-device-width: 1024px) {
-    body .dock-mobile {
-      display: none; } }
   @media screen and (max-device-width: 1023px) and (orientation: landscape) {
     body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center; }
-      body .dock-mobile {
-        display: flex; }
-      body .form {
-        border: red solid 1pc;
-        margin: 3%;
-        height: 90vh;
-        width: 90vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; } }
+      align-items: center; } }
   body .dock {
+    /*@media only screen 
+        and (max-device-width: 1023px){
+                display:none;
+            }*/
     background-color: #E9E9E9;
     margin: 25vh;
     border-radius: 6px;
@@ -58,7 +48,26 @@ body {
         width: 95vw; } }
     @media only screen and (max-device-width: 1023px) {
       body .dock {
-        display: none; } }
+        border: red solid 1pc;
+        height: 60vh;
+        width: 60vw; }
+        body .dock .img {
+          display: none; }
+        body .dock .form {
+          border: red solid 1pc;
+          margin: 3%;
+          height: 60%;
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+        body .dock .form_camp {
+          border: red solid 1pc;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; } }
     body .dock .img {
       grid-area: img; }
     body .dock .form {
