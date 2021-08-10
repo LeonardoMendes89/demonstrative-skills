@@ -79,13 +79,6 @@ body{
     and (orientation:portrait){
         @include d_flex(flex,column,center,center);
         @include f_size(3em);
-        #alerting,#empty,#nofetch{
-            height:3em;
-            width:80vw;
-        }
-        .alert{
-            font-size:3em;
-        }
     }
     .dock{
         @media screen 
