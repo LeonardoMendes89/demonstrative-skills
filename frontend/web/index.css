@@ -4,10 +4,16 @@ body {
   background-color: #011126;
   color: #fff;
   font-family: 'Unna', serif; }
+  body .experience {
+    display: none; }
   @media screen and (max-device-width: 1023px) and (orientation: portrait) {
     body {
       height: 100%;
-      width: 100%; } }
+      width: 100%; }
+      body .experience {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 3em; } }
   @media screen and (max-device-width: 1023px) and (orientation: landscape) {
     body {
       height: 100%;

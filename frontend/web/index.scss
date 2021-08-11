@@ -44,11 +44,19 @@
     color:$l-color;
 
     font-family: 'Unna', serif;
+    .experience{
+        display:none;
+    }
 
     @media screen 
     and(max-device-width:1023px)
     and(orientation:portrait){
         @include s_size(100%,100%);
+        .experience{
+            display:flex;
+            flex-direction:column-reverse;
+            padding:3em;
+        }
     }
     @media screen 
     and(max-device-width:1023px)
