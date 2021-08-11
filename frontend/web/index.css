@@ -4,6 +4,15 @@ body {
   background-color: #011126;
   color: #fff;
   font-family: 'Unna', serif; }
+  @media screen and (max-device-width: 1023px) and (orientation: portrait) {
+    body {
+      height: 100%;
+      width: 100%; } }
+  @media screen and (max-device-width: 1023px) and (orientation: landscape) {
+    body {
+      height: 100%;
+      width: 100%;
+      overflow: scroll; } }
 
 header {
   grid-area: header;
@@ -105,12 +114,29 @@ footer {
   grid-template-columns: 220px 1fr;
   grid-template-rows: 30vh 65vh 5vh;
   grid-template-areas: "aside  header" "aside    main" "aside  footer"; }
-  @media screen and (max-device-width: 768px) {
+  @media screen and (max-device-width: 1023px) and (orientation: portrait) {
     .d-dev {
       display: none; } }
-
-.m-device {
-  display: none; }
-  @media screen and (max-device-width: 768px) {
-    .m-device {
-      display: flex; } }
+  @media screen and (max-device-width: 1023px) and (orientation: landscape) {
+    .d-dev {
+      display: grid;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 40vh 25vh 95vh 5vh;
+      grid-template-areas: "header  header" "aside    aside" "main      main" "footer   footer"; }
+      .d-dev header {
+        font-size: x-large; }
+      .d-dev aside {
+        padding: 1em;
+        background-color: #9CA1A6;
+        font-size: xx-large; }
+        .d-dev aside #icon {
+          display: none; }
+        .d-dev aside #search {
+          width: 60vw;
+          padding: 0.7em; }
+      .d-dev footer {
+        font-size: large;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start; } }

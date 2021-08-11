@@ -28,6 +28,10 @@
  @mixin size($font){
      font-size:$font;
  }
+ @mixin s_size($htg,$wdt){
+   height:$htg;
+   width:$wdt;
+}
  @function calculation($value, $factor){
      @return ($value * $factor);
  }
@@ -40,6 +44,18 @@
     color:$l-color;
 
     font-family: 'Unna', serif;
+
+    @media screen 
+    and(max-device-width:1023px)
+    and(orientation:portrait){
+        @include s_size(100%,100%);
+    }
+    @media screen 
+    and(max-device-width:1023px)
+    and(orientation:landscape){
+        @include s_size(100%,100%);
+        overflow:scroll;
+    }
  }
 header{
     @include area(header);
@@ -148,16 +164,47 @@ footer{
                      'aside  header'
                      'aside    main'
                      'aside  footer');
-        @media screen and (max-device-width:768px){
-            display: none;
-        }
- }
-.m-device{
-    @include display(none);
-    @media screen and (max-device-width:768px){
-        display: flex;
+    @media screen 
+    and(max-device-width:1023px)
+    and(orientation:portrait){
+        display:none;    
     }
-}
+    @media screen 
+    and(max-device-width:1023px)
+    and(orientation:landscape){
+        header{
+            @include size(x-large);
+        }
+        aside{
+            padding:1em;
+            background-color:$grey;
+            @include size(xx-large);
+            #icon{
+                display:none;
+            }
+            #search{
+                width:60vw;
+                padding:0.7em; 
+            }
+        }
+        footer{
+            @include size(large);
+            display:flex;
+            flex-direction:row;
+            justify-content:flex-start;
+        }
+        display:grid;
+        @include d_grid( grid,
+                         1fr,
+                         40vh 25vh 95vh 5vh,
+                         'header  header'
+                         'aside    aside'
+                         'main      main'
+                         'footer   footer');
+       
+    }
+ }
+
 
 
 
