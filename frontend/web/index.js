@@ -1,3 +1,4 @@
+
 let doc = document
 doc.onload  = addEventListener('load',()=>{
     $('#alert').hide(1)
@@ -116,8 +117,6 @@ $('#search').change(function(){
                 })
                 .catch(err => console.log(err))
 
-    }else if($(this).val() == ''){
-        doc.location.reload()
     }
 })
 $('#search').change(function(){
@@ -171,8 +170,6 @@ $('#search').change(function(){
                 })
                 .catch(err => console.log(err))
 
-    }else if($(this).val() == ''){
-        doc.location.reload()
     }
 })
 $('#search').change(function(){
@@ -226,11 +223,13 @@ $('#search').change(function(){
                 })
                 .catch(err => console.log(err))
 
-    }else if($(this).val() == ''){
-         doc.location.reload()
     }
 }) 
-
+$('#search').keyup(function(){
+    if($(this).val() == ''){
+      doc.location.reload()
+    }
+})
 
 
 
