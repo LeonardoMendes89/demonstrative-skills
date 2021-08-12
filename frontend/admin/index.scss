@@ -60,6 +60,10 @@ $hidden:hidden;
      color:$smoke; 
      font-family: 'Unna', serif;
      overflow:hidden;
+     @media screen 
+     and(max-device-width:1023px){
+         overflow:scroll;
+     }
  }
  .dock{
     @media screen 
@@ -67,7 +71,7 @@ $hidden:hidden;
     and(orientation:portrait){
     @include d_grid(grid,
                     1fr,
-                    10vh 70vh 20vh,
+                    10vh 85vh 5vh,
                     'header  header'
                     'main     main'
                     'footer footer');
@@ -98,18 +102,49 @@ $hidden:hidden;
                 }
          }
          footer{
+             overflow:hidden;
              display:flex;
              i{
                  display:none;
              }
             #homeArea{
-                margin-top:-8em;
-                height:42%;
-                width:40%;
+                height:100%;
+                width:20%;
                 text-align:center;
                 font-size:x-large;
              }
          }
+    }
+    @media screen 
+    and(max-device-width:1023px)
+    and(orientation:landscape){
+        @include d_grid(grid,
+                        1fr,
+                        10vh 165vh 5vh,
+                        'header  header'
+                        'main     main'
+                        'footer footer');
+        main{
+            padding:0.5em;
+                 #id,
+                 #name,
+                 #job,
+                 #salary,
+                 #label,
+                 #inputGroupSelect01{
+                     @include f_size(2.5em); 
+                 }
+                 #send,
+                 #clear,
+                 #edition,
+                 #getId,
+                 #update,
+                 #delete,
+                 #nmode{
+                     margin:0 0.1em; 
+                     font-size:3em;
+                 }
+          }
     }
      @include size(100vh,100vw);
      @include d_grid(grid,

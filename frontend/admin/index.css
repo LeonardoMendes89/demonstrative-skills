@@ -5,6 +5,9 @@ body {
   color: whitesmoke;
   font-family: 'Unna', serif;
   overflow: hidden; }
+  @media screen and (max-device-width: 1023px) {
+    body {
+      overflow: scroll; } }
 
 .dock {
   height: 100vh;
@@ -17,7 +20,7 @@ body {
     .dock {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 10vh 70vh 20vh;
+      grid-template-rows: 10vh 85vh 5vh;
       grid-template-areas: "header  header" "main     main" "footer footer"; }
       .dock header strong {
         font-size: 1.5em; }
@@ -40,15 +43,39 @@ body {
           margin: 0 0.1em;
           font-size: 3em; }
       .dock footer {
+        overflow: hidden;
         display: flex; }
         .dock footer i {
           display: none; }
         .dock footer #homeArea {
-          margin-top: -8em;
-          height: 42%;
-          width: 40%;
+          height: 100%;
+          width: 20%;
           text-align: center;
           font-size: x-large; } }
+  @media screen and (max-device-width: 1023px) and (orientation: landscape) {
+    .dock {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 10vh 165vh 5vh;
+      grid-template-areas: "header  header" "main     main" "footer footer"; }
+      .dock main {
+        padding: 0.5em; }
+        .dock main #id,
+        .dock main #name,
+        .dock main #job,
+        .dock main #salary,
+        .dock main #label,
+        .dock main #inputGroupSelect01 {
+          font-size: 2.5em; }
+        .dock main #send,
+        .dock main #clear,
+        .dock main #edition,
+        .dock main #getId,
+        .dock main #update,
+        .dock main #delete,
+        .dock main #nmode {
+          margin: 0 0.1em;
+          font-size: 3em; } }
   .dock header {
     grid-area: header;
     display: flex;
