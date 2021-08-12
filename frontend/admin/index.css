@@ -25,6 +25,9 @@ body {
       .dock header strong {
         font-size: 1.5em; }
       .dock main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: 0.5em; }
         .dock main #id,
         .dock main #name,
@@ -59,6 +62,9 @@ body {
       grid-template-rows: 10vh 165vh 5vh;
       grid-template-areas: "header  header" "main     main" "footer footer"; }
       .dock main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: 0.5em; }
         .dock main #id,
         .dock main #name,
@@ -66,7 +72,7 @@ body {
         .dock main #salary,
         .dock main #label,
         .dock main #inputGroupSelect01 {
-          font-size: 2.5em; }
+          font-size: 2em; }
         .dock main #send,
         .dock main #clear,
         .dock main #edition,
@@ -75,7 +81,7 @@ body {
         .dock main #delete,
         .dock main #nmode {
           margin: 0 0.1em;
-          font-size: 3em; } }
+          font-size: 2em; } }
   .dock header {
     grid-area: header;
     display: flex;

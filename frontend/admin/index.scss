@@ -81,6 +81,9 @@ $hidden:hidden;
             }
         }
         main{
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
            padding:0.5em;
                 #id,
                 #name,
@@ -125,6 +128,9 @@ $hidden:hidden;
                         'main     main'
                         'footer footer');
         main{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
             padding:0.5em;
                  #id,
                  #name,
@@ -132,7 +138,7 @@ $hidden:hidden;
                  #salary,
                  #label,
                  #inputGroupSelect01{
-                     @include f_size(2.5em); 
+                     @include f_size(2em); 
                  }
                  #send,
                  #clear,
@@ -142,7 +148,7 @@ $hidden:hidden;
                  #delete,
                  #nmode{
                      margin:0 0.1em; 
-                     font-size:3em;
+                     font-size:2em;
                  }
           }
     }
