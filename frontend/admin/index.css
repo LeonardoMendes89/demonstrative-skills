@@ -1,4 +1,3 @@
-/*scss file*/
 @import url("https://fonts.googleapis.com/css2?family=Unna:wght@700&display=swap");
 body {
   margin: 0;
@@ -14,6 +13,42 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 20vh 75vh 5vh;
   grid-template-areas: "header  header" "main     main" "footer footer"; }
+  @media screen and (max-device-width: 1023px) and (orientation: portrait) {
+    .dock {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 10vh 70vh 20vh;
+      grid-template-areas: "header  header" "main     main" "footer footer"; }
+      .dock header strong {
+        font-size: 1.5em; }
+      .dock main {
+        padding: 0.5em; }
+        .dock main #id,
+        .dock main #name,
+        .dock main #job,
+        .dock main #salary,
+        .dock main #label,
+        .dock main #inputGroupSelect01 {
+          font-size: 2.5em; }
+        .dock main #send,
+        .dock main #clear,
+        .dock main #edition,
+        .dock main #getId,
+        .dock main #update,
+        .dock main #delete,
+        .dock main #nmode {
+          margin: 0 0.1em;
+          font-size: 3em; }
+      .dock footer {
+        display: flex; }
+        .dock footer i {
+          display: none; }
+        .dock footer #homeArea {
+          margin-top: -8em;
+          height: 42%;
+          width: 40%;
+          text-align: center;
+          font-size: x-large; } }
   .dock header {
     grid-area: header;
     display: flex;
